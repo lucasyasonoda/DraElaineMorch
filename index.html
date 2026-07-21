@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dra. Elaine Morch | Ginecologista em Sorocaba — Estética Íntima e Saúde Hormonal</title>
-  <meta name="description" content="Dra. Elaine Morch, ginecologista em Sorocaba especializada em estética íntima e saúde hormonal. Laser íntimo, ninfoplastia, reposição hormonal e mais.">
+  <title>Dra. Elaine Morch | Ginecologista em Sorocaba</title>
+  <meta name="description" content="Dra. Elaine Morch: cuidado individualizado em estética íntima e saúde hormonal, em Sorocaba.">
   <link rel="icon" href="imgs/logo.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="home-page">
   <header class="site-header">
     <nav aria-label="Navegação principal">
-      <a href="index.html" class="brand">
-        <img src="imgs/logo.png" alt="Dra. Elaine Morch">
+      <a href="index.html" class="brand" aria-label="Dra. Elaine Morch — Início">
         <span>Dra. Elaine Morch</span>
       </a>
 
@@ -21,205 +20,98 @@
       </button>
 
       <ul class="nav-links">
-        <li><a href="index.html">Início</a></li>
-        <li>
-          <details class="dropdown">
-            <summary>Estética Íntima</summary>
-            <ul class="submenu">
-              <li><a href="pages/estetica-intima.html">Visão geral</a></li>
-              <li><a href="pages/laser-intimo.html">Laser Íntimo</a></li>
-              <li><a href="pages/ninfoplastia.html">Ninfoplastia</a></li>
-              <li><a href="pages/radiofrequencia-intima.html">Radiofrequência Íntima</a></li>
-              <li><a href="pages/clareamento-intimo.html">Clareamento Íntimo</a></li>
-              <li><a href="pages/preenchimento-intimo.html">Preenchimento Íntimo</a></li>
-            </ul>
-          </details>
-        </li>
-        <li>
-          <details class="dropdown">
-            <summary>Saúde Hormonal</summary>
-            <ul class="submenu">
-              <li><a href="pages/saude-hormonal.html">Visão geral</a></li>
-              <li><a href="pages/menopausa.html">Menopausa</a></li>
-              <li><a href="pages/reposicao-hormonal.html">Reposição Hormonal</a></li>
-              <li><a href="pages/hormonios-bioidenticos.html">Hormônios Bioidenticos</a></li>
-              <li><a href="pages/implantes-hormonais.html">Implantes Hormonais</a></li>
-              <li><a href="pages/incontinencia-urinaria.html">Incontinência Urinária</a></li>
-            </ul>
-          </details>
-        </li>
-        <li><a href="index.html#contato" class="btn-nav-cta">Agendar Consulta</a></li>
+        <li><a href="#tratamentos">Tratamentos</a></li>
+        <li><a href="#sobre">A consulta</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#contato" class="btn-nav-cta">Agendar consulta</a></li>
       </ul>
     </nav>
   </header>
+
   <main>
-    <section class="hero" style="background-image: url('imgs/hero-home.jpg');">
-      <article class="hero-content">
-        <p class="eyebrow" style="color:#e9d3b4;">Ginecologista em Sorocaba</p>
-        <h1>Cuidado especializado em estética íntima e saúde hormonal</h1>
-        <p class="lead">A Dra. Elaine Morch une ciência, escuta e delicadeza para acompanhar você em cada fase da vida — do desconforto íntimo à menopausa — com tratamentos personalizados e sem julgamentos.</p>
-        <section class="hero-actions">
-          <a href="index.html#contato" class="btn-primary">Agendar consulta</a>
-          <a href="pages/estetica-intima.html" class="btn-secondary" style="color:#fff;border-color:#fff;">Conhecer tratamentos</a>
-        </section>
-        <p class="hero-note">Atendimento em Sorocaba — SP, presencial e online.</p>
-      </article>
+    <section class="editorial-hero" aria-labelledby="titulo-principal">
+      <div class="editorial-hero__portrait" role="img" aria-label="Retrato da Dra. Elaine Morch"></div>
+      <div class="editorial-hero__content">
+        <span class="editorial-mark" aria-hidden="true">e</span>
+        <div class="editorial-hero__copy">
+          <p class="eyebrow">Ginecologista em Sorocaba</p>
+          <h1 id="titulo-principal">Cuidado especializado em <em>estética íntima</em> e saúde hormonal</h1>
+          <p>A Dra. Elaine Morch une ciência, escuta e delicadeza para acompanhar você em cada fase da vida — com tratamentos personalizados e sem julgamentos.</p>
+          <p class="hero-location">Atendimento presencial e online</p>
+          <div class="hero-actions">
+            <a href="#contato" class="btn-primary">Agendar consulta</a>
+            <a href="#tratamentos" class="btn-secondary">Conhecer tratamentos</a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="tight">
-      <section class="wrap">
-        <ul class="stats-bar">
-          <li><strong>+10</strong><span>Tratamentos especializados</span></li>
-          <li><strong>2</strong><span>Áreas de atuação dedicadas</span></li>
-          <li><strong>100%</strong><span>Consultas individualizadas</span></li>
-        </ul>
-      </section>
+    <section class="home-stats" aria-label="Destaques do atendimento">
+      <ul>
+        <li><strong>+10</strong><span>tratamentos especializados</span></li>
+        <li><strong>2</strong><span>áreas de atuação dedicadas</span></li>
+        <li><strong>100%</strong><span>cuidado individualizado</span></li>
+      </ul>
     </section>
 
-    <section class="alt">
-      <section class="wrap">
-        <header class="section-head center">
-          <p class="eyebrow">Áreas de atuação</p>
-          <h2>Um cuidado completo, pensado para você</h2>
-        </header>
-        <section class="grid-2">
-          <article class="card">
-            <h3>Estética Íntima</h3>
-            <p>Tratamentos para conforto físico, autoestima e bem-estar da região íntima: laser, ninfoplastia, radiofrequência, clareamento e preenchimento.</p>
-            <p class="tags">Laser Íntimo · Ninfoplastia · Radiofrequência · Clareamento · Preenchimento</p>
-            <a href="pages/estetica-intima.html" class="card-link" style="font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;color:var(--gold-dark);font-weight:600;border-bottom:1px solid var(--gold);padding-bottom:3px;">Explorar tratamentos →</a>
-          </article>
-          <article class="card">
-            <h3>Saúde Hormonal</h3>
-            <p>Acompanhamento completo para o climatério e a menopausa: reposição hormonal, hormônios bioidenticos, implantes e tratamento de incontinência urinária.</p>
-            <p class="tags">Menopausa · Reposição Hormonal · Hormônios Bioidenticos · Implantes · Incontinência</p>
-            <a href="pages/saude-hormonal.html" class="card-link" style="font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;color:var(--gold-dark);font-weight:600;border-bottom:1px solid var(--gold);padding-bottom:3px;">Explorar cuidados →</a>
-          </article>
-        </section>
-      </section>
-    </section>
-
-    <section>
-      <section class="wrap">
-        <article class="split reverse">
-          <figure><img src="imgs/sobre-dra-elaine.jpg" alt="Dra. Elaine Morch, ginecologista em Sorocaba"></figure>
-          <article>
-            <p class="eyebrow">Sobre a Dra. Elaine Morch</p>
-            <h2>Ciência, acolhimento e escuta ativa em cada consulta</h2>
-            <p class="lead">Cada mulher chega ao consultório com uma história única — e merece um cuidado que respeite isso. A Dra. Elaine acredita que tratamento de verdade começa antes da técnica: começa com a escuta.</p>
-            <blockquote>“Meu propósito é que cada paciente saia da consulta se sentindo compreendida, informada e confiante na própria decisão sobre o seu corpo.”</blockquote>
-            <a href="index.html#contato" class="btn-primary">Agendar consulta</a>
-          </article>
+    <section class="practice-areas" id="tratamentos" aria-labelledby="areas-titulo">
+      <header class="home-section-head">
+        <p class="eyebrow">Áreas de atuação</p>
+        <h2 id="areas-titulo">Um cuidado completo, <em>pensado para você.</em></h2>
+      </header>
+      <div class="practice-grid">
+        <article class="practice-card">
+          <p class="practice-card__index">01</p>
+          <h3>Estética íntima</h3>
+          <p>Tratamentos para conforto físico, autoestima e bem-estar da região íntima.</p>
+          <a href="pages/estetica-intima.html">Explorar tratamentos <span aria-hidden="true">→</span></a>
         </article>
-      </section>
+        <article class="practice-card practice-card--light">
+          <p class="practice-card__index">02</p>
+          <h3>Saúde hormonal</h3>
+          <p>Acompanhamento completo para climatério, menopausa e qualidade de vida.</p>
+          <a href="pages/saude-hormonal.html">Explorar cuidados <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
     </section>
 
-    <section class="alt">
-      <section class="wrap">
-        <header class="section-head center">
-          <p class="eyebrow">Como funciona</p>
-          <h2>Do primeiro contato ao seu bem-estar</h2>
-        </header>
-        <ol class="steps" style="max-width:720px;margin:0 auto;">
-          <li><h4>Agendamento</h4><p>Você entra em contato pelo WhatsApp e agenda o melhor horário para sua consulta.</p></li>
-          <li><h4>Consulta e escuta</h4><p>Uma conversa completa sobre seus sintomas, histórico e objetivos — sem pressa e sem julgamentos.</p></li>
-          <li><h4>Plano personalizado</h4><p>A Dra. Elaine indica o tratamento (ou combinação de tratamentos) mais adequado para o seu caso.</p></li>
-          <li><h4>Acompanhamento contínuo</h4><p>Retornos e ajustes ao longo do tratamento, sempre que necessário.</p></li>
-        </ol>
-      </section>
+    <section class="consultation" id="sobre" aria-labelledby="consulta-titulo">
+      <div>
+        <p class="eyebrow">A consulta</p>
+        <h2 id="consulta-titulo">Escuta atenta. Informação clara. <em>Um plano só seu.</em></h2>
+      </div>
+      <ol>
+        <li><span>01</span><p>Entendemos sua história, sintomas e objetivos com tempo e acolhimento.</p></li>
+        <li><span>02</span><p>Conversamos sobre as possibilidades de cuidado com clareza e segurança.</p></li>
+        <li><span>03</span><p>Definimos um plano personalizado, respeitando o seu momento.</p></li>
+      </ol>
     </section>
 
-    <section>
-      <section class="wrap">
-        <header class="section-head center">
-          <p class="eyebrow">Depoimentos</p>
-          <h2>O que dizem as pacientes</h2>
-        </header>
-        <section class="grid-3">
-          <article class="testimonial">
-            <p class="quote">“Me senti ouvida desde a primeira consulta. Finalmente encontrei alguém que explica tudo com calma antes de qualquer indicação.”</p>
-            <p class="author">Paciente de Sorocaba</p>
-          </article>
-          <article class="testimonial">
-            <p class="quote">“O acompanhamento na menopausa mudou minha qualidade de vida. Voltei a dormir bem e minha disposição melhorou muito.”</p>
-            <p class="author">Paciente de Sorocaba</p>
-          </article>
-          <article class="testimonial">
-            <p class="quote">“Um atendimento humano, sem pressa e sem julgamento. Recomendo de olhos fechados.”</p>
-            <p class="author">Paciente de Sorocaba</p>
-          </article>
-        </section>
-      </section>
+    <section class="home-cta" id="contato" aria-labelledby="cta-titulo">
+      <div>
+        <p class="eyebrow">Vamos conversar</p>
+        <h2 id="cta-titulo">Seu bem-estar começa com uma conversa.</h2>
+      </div>
+      <a href="mailto:contato@draelaine.com.br" class="btn-primary">Agendar minha consulta</a>
     </section>
-      <section class="tight">
-        <section class="wrap">
-          <header class="section-head center"><p class="eyebrow">Dúvidas frequentes</p><h2>Perguntas frequentes</h2></header>
-          <section>
-            <details class="faq-item">
-              <summary>Como funciona a primeira consulta?</summary>
-              <p>A primeira consulta é dedicada a entender seu histórico, sintomas e objetivos. É um espaço de escuta, sem pressa, para que o plano de tratamento faça sentido para você.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Os atendimentos são presenciais ou online?</summary>
-              <p>A Dra. Elaine atende presencialmente em Sorocaba — SP, com opção de consultas online para acompanhamento e orientações, quando indicado.</p>
-            </details>
-            <details class="faq-item">
-              <summary>Como faço para agendar uma consulta?</summary>
-              <p>É só entrar em contato pelo WhatsApp através do botão flutuante no site ou pelo rodapé da página. Nossa equipe cuidará do agendamento com você.</p>
-            </details>
-          </section>
-        </section>
-      </section>
   </main>
-      <section class="cta-final">
-        <section class="wrap">
-          <h2>O seu bem-estar começa com uma conversa.</h2>
-          <p class="lead">Agende agora uma consulta com a Dra. Elaine Morch em Sorocaba e dê o primeiro passo para se sentir bem em cada fase da vida.</p>
-          <section class="hero-actions">
-            <a href="index.html#contato" class="btn-primary">Agendar minha consulta</a>
-            <a href="#contato" class="btn-secondary">Falar pelo WhatsApp</a>
-          </section>
-        </section>
-      </section>
-  <footer class="site-footer" id="contato">
-    <section class="footer-grid">
-      <article>
-        <a href="index.html" class="brand">
-          <img src="imgs/logo.png" alt="Dra. Elaine Morch">
-          <span>Dra. Elaine Morch</span>
-        </a>
-        <p>Estética íntima, menopausa e reposição hormonal em Sorocaba — SP. Ciência, acolhimento e escuta ativa em cada etapa do seu cuidado.</p>
-      </article>
 
-      <article>
-        <h4>Estética Íntima</h4>
-        <ul>
-          <li><a href="pages/laser-intimo.html">Laser Íntimo</a></li>
-          <li><a href="pages/ninfoplastia.html">Ninfoplastia</a></li>
-          <li><a href="pages/radiofrequencia-intima.html">Radiofrequência Íntima</a></li>
-          <li><a href="pages/clareamento-intimo.html">Clareamento Íntimo</a></li>
-          <li><a href="pages/preenchimento-intimo.html">Preenchimento Íntimo</a></li>
-        </ul>
-      </article>
-
-      <article>
-        <h4>Saúde Hormonal</h4>
-        <ul>
-          <li><a href="pages/menopausa.html">Menopausa</a></li>
-          <li><a href="pages/reposicao-hormonal.html">Reposição Hormonal</a></li>
-          <li><a href="pages/hormonios-bioidenticos.html">Hormônios Bioidenticos</a></li>
-          <li><a href="pages/implantes-hormonais.html">Implantes Hormonais</a></li>
-          <li><a href="pages/incontinencia-urinaria.html">Incontinência Urinária</a></li>
-        </ul>
-      </article>
-    </section>
-
-    <p class="copyright">© <time id="ano-atual">2026</time> Dra. Elaine Morch — Sorocaba, SP. Todos os direitos reservados. Conteúdo informativo; não substitui consulta médica.</p>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand"><span>Dra. Elaine Morch</span></a>
+        <p>Estética íntima e saúde hormonal em Sorocaba — SP.</p>
+      </div>
+      <div class="footer-links">
+        <a href="pages/estetica-intima.html">Estética íntima</a>
+        <a href="pages/saude-hormonal.html">Saúde hormonal</a>
+        <a href="#contato">Agendar consulta</a>
+      </div>
+    </div>
+    <p class="copyright">© <time id="ano-atual">2026</time> Dra. Elaine Morch. Conteúdo informativo; não substitui consulta médica.</p>
   </footer>
 
-  <a id="whatsapp-float" href="#contato" aria-label="Fale pelo WhatsApp" title="Fale pelo WhatsApp">☎</a>
   <button id="back-to-top" aria-label="Voltar ao topo">↑</button>
-
   <script src="js/script.js"></script>
 </body>
 </html>

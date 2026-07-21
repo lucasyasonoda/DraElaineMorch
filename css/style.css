@@ -499,3 +499,114 @@ a#whatsapp-float {
   ul.stats-bar { gap: 36px; }
   section { padding: 70px 5%; }
 }
+
+/* ============================================================
+   Página inicial editorial — identidade Dra. Elaine Morch
+   ============================================================ */
+:root {
+  --navy: #373d53;
+  --ink: #24222f;
+  --cream: #ddd9ce;
+  --cream-soft: #f1efea;
+  --font-display: "Georgia Pro", Georgia, serif;
+  --font-body: "Neue Montreal", "Helvetica Neue", Arial, sans-serif;
+}
+
+body.home-page { background: var(--cream-soft); color: var(--ink); font-family: var(--font-body); }
+.home-page h1, .home-page h2, .home-page h3 { font-family: var(--font-body); font-weight: 600; color: inherit; letter-spacing: -0.055em; }
+.home-page em { font-family: var(--font-display); font-weight: 400; }
+.home-page .eyebrow { color: inherit; font-family: var(--font-body); font-size: .69rem; font-weight: 700; letter-spacing: .22em; margin: 0 0 1rem; }
+
+.home-page header.site-header { background: var(--cream-soft); border: 0; box-shadow: none; position: relative; }
+.home-page header.site-header nav { max-width: 1320px; min-height: 74px; padding: 10px 4%; }
+.home-page .brand { color: var(--ink); font-family: var(--font-body); font-size: .82rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.home-page .brand img { height: 42px; width: 42px; object-fit: contain; }
+.home-page nav .nav-links { gap: 1.8rem; }
+.home-page nav .nav-links > li > a { color: var(--ink); font-size: .69rem; font-weight: 700; letter-spacing: .13em; padding: .4rem 0; }
+.home-page .btn-nav-cta { background: var(--ink); border-radius: 0; color: var(--cream-soft) !important; padding: .72rem 1rem !important; }
+.home-page .btn-nav-cta:hover { background: var(--navy); }
+
+.editorial-hero { display: grid; grid-template-columns: minmax(280px, .83fr) minmax(480px, 1.42fr); max-width: 1440px; margin: 0 auto; min-height: min(650px, calc(100vh - 74px)); padding: 0; background: var(--ink); overflow: hidden; }
+.editorial-hero__portrait { min-height: 650px; background: linear-gradient(0deg, rgba(36,34,47,.38), transparent 36%), url("../imgs/hero-home.jpg") center 24% / cover no-repeat; }
+.editorial-hero__content { position: relative; display: flex; align-items: center; overflow: hidden; background: var(--ink); color: var(--cream-soft); padding: 5rem clamp(2rem, 6vw, 7rem); }
+.editorial-hero__copy { position: relative; z-index: 1; max-width: 660px; }
+.editorial-hero h1 { max-width: 700px; margin: 0 0 1.6rem; font-size: clamp(2.5rem, 4.5vw, 4.55rem); line-height: .98; }
+.editorial-hero h1 em { display: block; font-size: 1.02em; }
+.editorial-hero__copy > p:not(.eyebrow):not(.hero-location) { max-width: 590px; font-size: clamp(1rem, 1.35vw, 1.18rem); line-height: 1.43; }
+.editorial-hero .hero-location { margin: 2rem 0 1.6rem; font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.editorial-mark { position: absolute; right: -8%; top: -24%; color: rgba(221,217,206,.08); font-family: var(--font-display); font-size: min(52vw, 50rem); font-style: italic; line-height: 1; }
+.home-page .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.home-page .btn-primary, .home-page .btn-secondary { border-radius: 0; font-family: var(--font-body); font-size: .68rem; font-weight: 700; letter-spacing: .16em; padding: .9rem 1.15rem; text-transform: uppercase; }
+.home-page .btn-primary { background: var(--cream); color: var(--ink); }
+.home-page .btn-primary:hover { background: #fff; transform: none; }
+.home-page .btn-secondary { border-color: rgba(221,217,206,.8); color: var(--cream-soft); }
+.home-page .btn-secondary:hover { background: var(--cream-soft); color: var(--ink); }
+
+.home-stats { max-width: 1060px; margin: -2.25rem auto 0; padding: 0; position: relative; z-index: 2; }
+.home-stats ul { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--cream); padding: 1.35rem 2rem; }
+.home-stats li { text-align: center; padding: .2rem 1.5rem; border-right: 1px solid rgba(55,61,83,.25); }
+.home-stats li:last-child { border: 0; }
+.home-stats strong { display: block; font-family: var(--font-display); font-size: clamp(2rem, 3.2vw, 3.1rem); font-weight: 400; color: var(--navy); line-height: 1; }
+.home-stats span { display: block; max-width: 150px; margin: .45rem auto 0; font-size: .72rem; font-weight: 600; line-height: 1.1; color: var(--navy); }
+
+.practice-areas { max-width: 1080px; margin: 0 auto; padding: 5.4rem 2rem 4.5rem; }
+.home-section-head { max-width: 720px; margin-bottom: 2.35rem; }
+.home-section-head h2, .consultation h2, .home-cta h2 { font-size: clamp(2rem, 3.65vw, 3.45rem); line-height: 1.04; }
+.practice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+.practice-card { min-height: 278px; display: flex; flex-direction: column; background: var(--navy); color: var(--cream-soft); padding: 1.8rem; }
+.practice-card--light { background: var(--cream); color: var(--navy); }
+.practice-card__index { margin-bottom: auto; font-family: var(--font-display); font-size: 1.15rem; }
+.practice-card h3 { font-family: var(--font-display); font-size: clamp(1.8rem, 2.4vw, 2.5rem); font-weight: 400; letter-spacing: -.04em; }
+.practice-card > p:not(.practice-card__index) { max-width: 380px; margin: .6rem 0 1.4rem; font-size: .94rem; line-height: 1.3; }
+.practice-card a { align-self: flex-start; border-bottom: 1px solid currentColor; font-size: .67rem; font-weight: 700; letter-spacing: .15em; padding-bottom: .32rem; text-transform: uppercase; }
+.practice-card a span { font-size: 1rem; margin-left: .3rem; }
+
+.consultation { display: grid; grid-template-columns: .92fr 1.08fr; gap: clamp(2.5rem, 8vw, 9rem); max-width: 1440px; margin: 0 auto; padding: 4.3rem max(4%, calc((100vw - 1200px) / 2)); background: var(--cream); color: var(--ink); }
+.consultation ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.consultation li { border-top: 1px solid rgba(36,34,47,.35); padding-top: 1rem; }
+.consultation li span { display: block; margin-bottom: 1.1rem; font-family: var(--font-display); font-size: 1.4rem; }
+.consultation li p { font-size: .88rem; line-height: 1.35; }
+
+.home-cta { display: flex; align-items: end; justify-content: space-between; gap: 2rem; max-width: 1080px; margin: 0 auto; padding: 4.5rem 2rem; }
+.home-cta h2 { max-width: 610px; }
+.home-cta .btn-primary { flex-shrink: 0; background: var(--ink); color: var(--cream-soft); }
+.home-cta .btn-primary:hover { background: var(--navy); }
+.home-page footer.site-footer { background: var(--ink); color: var(--cream); padding: 2rem 4% 1.2rem; }
+.home-page footer.site-footer .footer-grid { display: flex; align-items: center; justify-content: space-between; max-width: 1320px; gap: 2rem; padding: 0 0 1.5rem; border-color: rgba(221,217,206,.25); }
+.home-page footer.site-footer .brand { color: var(--cream); margin-bottom: .65rem; }
+.home-page footer.site-footer p { color: var(--cream); font-size: .77rem; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 1.4rem; font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.home-page p.copyright { color: rgba(221,217,206,.67); margin-top: 1rem; font-size: .66rem; }
+.home-page button#back-to-top { background: var(--navy); border-radius: 0; }
+
+@media (max-width: 900px) {
+  .home-page header.site-header nav { min-height: 64px; }
+  .home-page .brand img { height: 36px; width: 36px; }
+  .home-page nav .nav-links { top: 64px; background: var(--cream-soft); }
+  .editorial-hero { grid-template-columns: 1fr; min-height: 0; }
+  .editorial-hero__portrait { min-height: 410px; background-position: center 22%; }
+  .editorial-hero__content { min-height: 490px; padding: 3.3rem 7%; }
+  .editorial-hero h1 { font-size: clamp(2.55rem, 11vw, 4rem); }
+  .editorial-mark { right: -14%; top: -16%; font-size: 31rem; }
+  .home-stats { margin: 0; }
+  .home-stats ul { padding: 1.25rem .5rem; }
+  .home-stats li { padding: .2rem .6rem; }
+  .home-stats span { font-size: .63rem; }
+  .practice-areas { padding: 3.8rem 1.4rem; }
+  .practice-grid, .consultation { grid-template-columns: 1fr; }
+  .practice-card { min-height: 245px; }
+  .consultation { gap: 2.5rem; padding: 3.8rem 1.4rem; }
+  .consultation ol { gap: 1rem; }
+  .home-cta { align-items: flex-start; flex-direction: column; padding: 3.8rem 1.4rem; }
+  .home-page footer.site-footer .footer-grid { align-items: flex-start; flex-direction: column; }
+}
+
+@media (max-width: 520px) {
+  .home-page .brand span { font-size: .66rem; }
+  .editorial-hero__portrait { min-height: 340px; }
+  .editorial-hero__content { min-height: 490px; }
+  .home-stats strong { font-size: 1.8rem; }
+  .home-stats span { max-width: 95px; }
+  .consultation ol { grid-template-columns: 1fr; }
+  .consultation li { padding-top: .7rem; }
+}

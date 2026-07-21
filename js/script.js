@@ -7,6 +7,15 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   // ---------- Entradas por scroll ----------
+  if (!document.body.classList.contains('home-page')) {
+    document.querySelectorAll('.hero-content, .breadcrumb, .section-head, .treatment-card, .split, .check-list, .steps, .results-list, .faq-item, .cta-final > .wrap').forEach(function (element, index) {
+      if (!element.hasAttribute('data-reveal')) {
+        element.setAttribute('data-reveal', '');
+        element.style.setProperty('--reveal-delay', (index % 3) * 70 + 'ms');
+      }
+    });
+  }
+
   var revealElements = document.querySelectorAll('[data-reveal]');
   if ('IntersectionObserver' in window) {
     var revealObserver = new IntersectionObserver(function (entries, observer) {

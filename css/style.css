@@ -553,13 +553,32 @@ body.home-page { background: var(--cream-soft); color: var(--ink); font-family: 
 .home-section-head { max-width: 720px; margin-bottom: 2.35rem; }
 .home-section-head h2, .consultation h2, .home-cta h2 { font-size: clamp(2rem, 3.65vw, 3.45rem); line-height: 1.04; }
 .practice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-.practice-card { min-height: 278px; display: flex; flex-direction: column; background: var(--navy); color: var(--cream-soft); padding: 1.8rem; }
+.practice-card { min-height: 278px; display: flex; flex-direction: column; background: var(--navy); box-shadow: 0 18px 32px rgba(36,34,47,.12); color: var(--cream-soft); padding: 1.8rem; transition: box-shadow .3s ease, transform .3s ease; }
 .practice-card--light { background: var(--cream); color: var(--navy); }
+.practice-card:hover { box-shadow: 0 24px 42px rgba(36,34,47,.22); transform: translateY(-7px); }
 .practice-card__index { margin-bottom: auto; font-family: var(--font-display); font-size: 1.15rem; }
 .practice-card h3 { font-family: var(--font-display); font-size: clamp(1.8rem, 2.4vw, 2.5rem); font-weight: 400; letter-spacing: -.04em; }
 .practice-card > p:not(.practice-card__index) { max-width: 380px; margin: .6rem 0 1.4rem; font-size: .94rem; line-height: 1.3; }
 .practice-card a { align-self: flex-start; border-bottom: 1px solid currentColor; font-size: .67rem; font-weight: 700; letter-spacing: .15em; padding-bottom: .32rem; text-transform: uppercase; }
 .practice-card a span { font-size: 1rem; margin-left: .3rem; }
+
+.featured-short { display: grid; grid-template-columns: .78fr 1.22fr; align-items: center; gap: clamp(2rem, 8vw, 8rem); max-width: 1080px; margin: 0 auto; padding: 1rem 2rem 5.4rem; }
+.featured-short__copy h2 { font-size: clamp(2rem, 3.65vw, 3.45rem); line-height: 1.04; }
+.featured-short__copy > p:not(.eyebrow) { max-width: 360px; margin: 1.2rem 0 1.7rem; font-size: .96rem; line-height: 1.42; }
+.featured-short__hint { font-size: .67rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.short-player { aspect-ratio: 9 / 12; position: relative; max-height: 620px; min-height: 420px; justify-self: end; width: min(100%, 430px); overflow: hidden; background: linear-gradient(180deg, rgba(36,34,47,.14), rgba(36,34,47,.75)), url("../imgs/hero-saude.jpg") center / cover no-repeat; box-shadow: 18px 20px 0 var(--cream), 0 24px 44px rgba(36,34,47,.2); color: var(--cream-soft); transition: box-shadow .35s ease, transform .35s ease; }
+.short-player:hover { box-shadow: 22px 24px 0 var(--cream), 0 32px 52px rgba(36,34,47,.28); transform: translateY(-5px); }
+.short-player::after { content: "Dra. Elaine Morch"; position: absolute; right: 1.1rem; top: 1.1rem; font-size: .62rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+.short-player__launch { position: absolute; z-index: 1; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .8rem; width: 100%; border: 0; background: transparent; color: inherit; font-family: var(--font-body); font-size: .67rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.short-player__play { display: grid; place-items: center; width: 72px; height: 72px; border: 1px solid var(--cream-soft); border-radius: 50%; background: rgba(36,34,47,.38); transition: transform .25s ease, background .25s ease; }
+.short-player__play::after { content: ""; margin-left: 5px; border-bottom: 9px solid transparent; border-left: 14px solid var(--cream-soft); border-top: 9px solid transparent; }
+.short-player__launch:hover .short-player__play, .short-player__launch:focus-visible .short-player__play { background: var(--cream); transform: scale(1.06); }
+.short-player__launch:hover .short-player__play::after, .short-player__launch:focus-visible .short-player__play::after { border-left-color: var(--ink); }
+.short-player__empty { position: absolute; z-index: 1; right: 1.1rem; bottom: 1.1rem; left: 1.1rem; font-size: .76rem; line-height: 1.3; }
+.short-player.is-unconfigured .short-player__empty::after { content: " Para ativar, informe a URL do Short no código."; display: block; margin-top: .2rem; color: rgba(221,217,206,.76); }
+.short-player iframe { position: absolute; z-index: 2; width: 100%; height: 100%; border: 0; inset: 0; }
+.short-player.is-playing::after { display: none; }
+.short-player.is-playing .short-player__launch, .short-player.is-playing .short-player__empty { display: none; }
 
 .consultation { display: grid; grid-template-columns: .92fr 1.08fr; gap: clamp(2.5rem, 8vw, 9rem); max-width: 1440px; margin: 0 auto; padding: 4.3rem max(4%, calc((100vw - 1200px) / 2)); background: var(--cream); color: var(--ink); }
 .consultation ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
@@ -579,6 +598,17 @@ body.home-page { background: var(--cream-soft); color: var(--ink); font-family: 
 .home-page p.copyright { color: rgba(221,217,206,.67); margin-top: 1rem; font-size: .66rem; }
 .home-page button#back-to-top { background: var(--navy); border-radius: 0; }
 
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity .72s cubic-bezier(.2,.75,.25,1) var(--reveal-delay, 0ms), transform .72s cubic-bezier(.2,.75,.25,1) var(--reveal-delay, 0ms); }
+  [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+  .editorial-hero__portrait { animation: portrait-settle 1s cubic-bezier(.2,.75,.25,1) both; }
+  @keyframes portrait-settle { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: scale(1); } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+
 @media (max-width: 900px) {
   .home-page header.site-header nav { min-height: 64px; }
   .home-page .brand img { height: 36px; width: 36px; }
@@ -593,8 +623,11 @@ body.home-page { background: var(--cream-soft); color: var(--ink); font-family: 
   .home-stats li { padding: .2rem .6rem; }
   .home-stats span { font-size: .63rem; }
   .practice-areas { padding: 3.8rem 1.4rem; }
-  .practice-grid, .consultation { grid-template-columns: 1fr; }
+  .practice-grid, .featured-short, .consultation { grid-template-columns: 1fr; }
   .practice-card { min-height: 245px; }
+  .featured-short { gap: 2rem; padding: 0 1.4rem 3.8rem; }
+  .short-player { justify-self: start; width: min(100%, 370px); }
+  .short-player:hover { transform: none; }
   .consultation { gap: 2.5rem; padding: 3.8rem 1.4rem; }
   .consultation ol { gap: 1rem; }
   .home-cta { align-items: flex-start; flex-direction: column; padding: 3.8rem 1.4rem; }

@@ -6,6 +6,27 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  // ---------- Entradas por scroll ----------
+  var revealElements = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+
+    revealElements.forEach(function (element) {
+      revealObserver.observe(element);
+    });
+  } else {
+    revealElements.forEach(function (element) {
+      element.classList.add('is-visible');
+    });
+  }
+
   // ---------- Menu mobile ----------
   var toggle = document.querySelector('.menu-toggle');
   var navLinks = document.querySelector('.nav-links');
@@ -51,6 +72,49 @@ document.addEventListener('DOMContentLoaded', function () {
     backToTop.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+  }
+
+  // ---------- Short em destaque ----------
+  // Para publicar um vídeo, defina data-short-url no elemento .short-player
+  // com uma URL de Short do YouTube. Este ponto único permite automatizar
+  // a troca do vídeo posteriormente, sem mudar o layout ou o player.
+  var shortPlayer = document.querySelector('.short-player[data-short-url]');
+
+  function getYouTubeVideoId(url) {
+    if (!url) return null;
+
+    try {
+      var parsedUrl = new URL(url);
+      var shortMatch = parsedUrl.pathname.match(/\/shorts\/([^/?#]+)/);
+      if (shortMatch) return shortMatch[1];
+      if (parsedUrl.hostname === 'youtu.be') return parsedUrl.pathname.slice(1);
+      return parsedUrl.searchParams.get('v');
+    } catch (error) {
+      return null;
+    }
+  }
+
+  if (shortPlayer) {
+    var shortButton = shortPlayer.querySelector('.short-player__launch');
+
+    if (shortButton) {
+      shortButton.addEventListener('click', function () {
+        var videoId = getYouTubeVideoId(shortPlayer.dataset.shortUrl);
+
+        if (!videoId) {
+          shortPlayer.classList.add('is-unconfigured');
+          return;
+        }
+
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId) + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+        iframe.title = shortPlayer.dataset.shortTitle || 'Vídeo da Dra. Elaine';
+        iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+        iframe.allowFullscreen = true;
+        shortPlayer.appendChild(iframe);
+        shortPlayer.classList.add('is-playing');
+      });
+    }
   }
 
 });

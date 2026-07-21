@@ -6,7 +6,7 @@
   <title>Dra. Elaine Morch | Ginecologista em Sorocaba</title>
   <meta name="description" content="Dra. Elaine Morch: cuidado individualizado em estética íntima e saúde hormonal, em Sorocaba.">
   <link rel="icon" href="imgs/logo.png" type="image/png">
-  <link rel="stylesheet" href="css/style.css?v=20260721-2">
+  <link rel="stylesheet" href="css/style.css?v=20260721-3">
 </head>
 <body class="home-page">
   <header class="site-header">
@@ -33,7 +33,7 @@
       <div class="editorial-hero__portrait" role="img" aria-label="Retrato da Dra. Elaine Morch"></div>
       <div class="editorial-hero__content">
         <span class="editorial-mark" aria-hidden="true">e</span>
-        <div class="editorial-hero__copy">
+        <div class="editorial-hero__copy" data-reveal>
           <p class="eyebrow">Ginecologista em Sorocaba</p>
           <h1 id="titulo-principal">Cuidado especializado em <em>estética íntima</em> e saúde hormonal</h1>
           <p>A Dra. Elaine Morch une ciência, escuta e delicadeza para acompanhar você em cada fase da vida — com tratamentos personalizados e sem julgamentos.</p>
@@ -46,7 +46,7 @@
       </div>
     </section>
 
-    <section class="home-stats" aria-label="Destaques do atendimento">
+    <section class="home-stats" aria-label="Destaques do atendimento" data-reveal style="--reveal-delay: 120ms">
       <ul>
         <li><strong>+10</strong><span>tratamentos especializados</span></li>
         <li><strong>2</strong><span>áreas de atuação dedicadas</span></li>
@@ -55,18 +55,18 @@
     </section>
 
     <section class="practice-areas" id="tratamentos" aria-labelledby="areas-titulo">
-      <header class="home-section-head">
+      <header class="home-section-head" data-reveal>
         <p class="eyebrow">Áreas de atuação</p>
         <h2 id="areas-titulo">Um cuidado completo, <em>pensado para você.</em></h2>
       </header>
       <div class="practice-grid">
-        <article class="practice-card">
+        <article class="practice-card" data-reveal style="--reveal-delay: 80ms">
           <p class="practice-card__index">01</p>
           <h3>Estética íntima</h3>
           <p>Tratamentos para conforto físico, autoestima e bem-estar da região íntima.</p>
           <a href="pages/estetica-intima.html">Explorar tratamentos <span aria-hidden="true">→</span></a>
         </article>
-        <article class="practice-card practice-card--light">
+        <article class="practice-card practice-card--light" data-reveal style="--reveal-delay: 170ms">
           <p class="practice-card__index">02</p>
           <h3>Saúde hormonal</h3>
           <p>Acompanhamento completo para climatério, menopausa e qualidade de vida.</p>
@@ -75,19 +75,36 @@
       </div>
     </section>
 
+    <section class="featured-short" id="video" aria-labelledby="video-titulo">
+      <div class="featured-short__copy" data-reveal>
+        <p class="eyebrow">Conteúdo em vídeo</p>
+        <h2 id="video-titulo">Informação clara, em <em>poucos minutos.</em></h2>
+        <p>Um espaço para conteúdos curtos da Dra. Elaine sobre saúde íntima, menopausa e bem-estar.</p>
+        <span class="featured-short__hint">Clique no play para assistir</span>
+      </div>
+      <!-- Para publicar um Short, cole a URL completa no atributo data-short-url abaixo. -->
+      <div class="short-player" data-short-url="https://www.youtube.com/shorts/T25FU1YX0jI" data-short-title="Vídeo de demonstração" data-reveal style="--reveal-delay: 110ms">
+        <button class="short-player__launch" type="button" aria-label="Reproduzir vídeo em destaque">
+          <span class="short-player__play" aria-hidden="true"></span>
+          <span>Assistir vídeo</span>
+        </button>
+        <p class="short-player__empty">Vídeo de demonstração — clique para testar o player.</p>
+      </div>
+    </section>
+
     <section class="consultation" id="sobre" aria-labelledby="consulta-titulo">
-      <div>
+      <div data-reveal>
         <p class="eyebrow">A consulta</p>
         <h2 id="consulta-titulo">Escuta atenta. Informação clara. <em>Um plano só seu.</em></h2>
       </div>
       <ol>
-        <li><span>01</span><p>Entendemos sua história, sintomas e objetivos com tempo e acolhimento.</p></li>
-        <li><span>02</span><p>Conversamos sobre as possibilidades de cuidado com clareza e segurança.</p></li>
-        <li><span>03</span><p>Definimos um plano personalizado, respeitando o seu momento.</p></li>
+        <li data-reveal style="--reveal-delay: 60ms"><span>01</span><p>Entendemos sua história, sintomas e objetivos com tempo e acolhimento.</p></li>
+        <li data-reveal style="--reveal-delay: 120ms"><span>02</span><p>Conversamos sobre as possibilidades de cuidado com clareza e segurança.</p></li>
+        <li data-reveal style="--reveal-delay: 180ms"><span>03</span><p>Definimos um plano personalizado, respeitando o seu momento.</p></li>
       </ol>
     </section>
 
-    <section class="home-cta" id="contato" aria-labelledby="cta-titulo">
+    <section class="home-cta" id="contato" aria-labelledby="cta-titulo" data-reveal>
       <div>
         <p class="eyebrow">Vamos conversar</p>
         <h2 id="cta-titulo">Seu bem-estar começa com uma conversa.</h2>

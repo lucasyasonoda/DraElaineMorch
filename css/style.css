@@ -186,35 +186,11 @@ nav details.dropdown ul.submenu li a:hover { background: var(--blush); color: va
 .btn-whatsapp { background: #25D366; color: var(--white); }
 .btn-whatsapp:hover { background: #1ebc59; }
 
-/* ---------- Hero ---------- */
-section.hero {
-  position: relative;
-  min-height: 88vh;
-  display: flex;
-  align-items: center;
-  color: var(--white);
-  background-size: cover;
-  background-position: center;
-  text-align: left;
-}
-section.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(100deg, rgba(40, 32, 24, 0.72) 0%, rgba(40, 32, 24, 0.42) 55%, rgba(40, 32, 24, 0.2) 100%);
-}
-section.hero article.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 680px;
-  padding: 0 6% 6%;
-}
-section.hero h1 { color: var(--white); margin-bottom: 20px; }
-section.hero p.lead { color: rgba(255,255,255,0.92); margin-bottom: 32px; }
-section.hero .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-section.hero p.hero-note { margin-top: 22px; font-size: 0.85rem; color: rgba(255,255,255,0.8); }
-
-section.hero.hero-compact { min-height: 52vh; }
+/* ---------- Hero ----------
+   Todas as páginas usam o mesmo hero editorial (.editorial-hero,
+   ver seção "Identidade editorial" mais abaixo) — home e internas. */
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+p.hero-note { margin-top: 22px; font-size: 0.85rem; color: var(--text-light); }
 
 /* ---------- Layout genérico ---------- */
 main { display: block; }
@@ -248,12 +224,28 @@ article.card p { color: var(--text-light); margin-bottom: 18px; }
 article.card p.tags { font-size: 0.85rem; color: var(--gold-dark); font-style: italic; }
 
 /* Cards de tratamento (hub pages) */
+.grid-cards { counter-reset: treatment; }
 article.treatment-card {
+  position: relative;
+  counter-increment: treatment;
   background: var(--white);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: transform 0.3s ease;
+}
+article.treatment-card::before {
+  content: counter(treatment, decimal-leading-zero);
+  position: absolute;
+  z-index: 2;
+  top: 14px;
+  left: 14px;
+  padding: 4px 11px;
+  background: rgba(36,34,47,.72);
+  color: var(--cream-soft, #fff);
+  font-family: var(--font-display);
+  font-size: .85rem;
+  letter-spacing: .04em;
 }
 article.treatment-card:hover { transform: translateY(-6px); }
 article.treatment-card figure { margin: 0; height: 220px; overflow: hidden; }
@@ -674,7 +666,7 @@ body:not(.home-page) .lead { color: var(--text-light); line-height: 1.48; }
 body:not(.home-page) header.site-header { background: rgba(241,239,234,.94); border-bottom: 1px solid rgba(36,34,47,.1); box-shadow: none; }
 body:not(.home-page) header.site-header nav { max-width: 1320px; min-height: 70px; padding: 10px 4%; }
 body:not(.home-page) .brand { color: var(--ink); font-family: var(--font-body); font-size: .78rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
-body:not(.home-page) .brand img { display: none; }
+body:not(.home-page) .brand img { height: 34px; width: 34px; object-fit: contain; }
 body:not(.home-page) nav .nav-links { gap: 1.6rem; }
 body:not(.home-page) nav .nav-links > li > a,
 body:not(.home-page) nav .nav-links > li > details > summary { color: var(--ink); font-size: .67rem; font-weight: 700; letter-spacing: .13em; }
@@ -685,13 +677,12 @@ body:not(.home-page) nav details.dropdown ul.submenu { background: var(--cream-s
 body:not(.home-page) nav details.dropdown ul.submenu li a:hover { background: var(--cream); color: var(--ink); }
 body:not(.home-page) .btn-nav-cta { background: var(--ink); border-radius: 0; color: var(--cream-soft) !important; padding: .74rem 1rem; }
 
-body:not(.home-page) section.hero { min-height: min(610px, calc(100vh - 70px)); max-width: 1440px; margin: 0 auto; padding: 0; background-position: center; }
-body:not(.home-page) section.hero::before { background: linear-gradient(90deg, rgba(36,34,47,.16) 0%, rgba(36,34,47,.3) 31%, rgba(36,34,47,.94) 56%, rgba(36,34,47,.98) 100%); }
-body:not(.home-page) section.hero::after { content: "e"; position: absolute; z-index: 1; right: -3%; top: -23%; color: rgba(221,217,206,.08); font-family: var(--font-display); font-size: min(52vw, 48rem); font-style: italic; line-height: 1; }
-body:not(.home-page) section.hero article.hero-content { max-width: 710px; margin-left: auto; padding: 5rem clamp(2rem, 6vw, 7rem) 5rem 2rem; }
-body:not(.home-page) section.hero .eyebrow { color: var(--cream); }
-body:not(.home-page) section.hero h1 { color: var(--cream-soft); font-size: clamp(2.5rem, 4.3vw, 4.55rem); letter-spacing: -.055em; line-height: .98; }
-body:not(.home-page) section.hero p.lead { color: rgba(241,239,234,.87); font-size: clamp(1rem, 1.35vw, 1.14rem); }
+/* O hero editorial (imagem + painel escuro) é o mesmo componente da home,
+   só com um teto de altura menor para não dominar páginas de conteúdo. */
+.editorial-hero--page { min-height: min(560px, calc(100vh - 70px)); }
+.editorial-hero--page .editorial-hero__portrait { min-height: 560px; }
+body:not(.home-page) .editorial-hero .eyebrow { color: var(--cream-soft); }
+body:not(.home-page) .editorial-hero h1 { color: var(--cream-soft); font-family: var(--font-display); font-weight: 500; }
 body:not(.home-page) .btn-primary,
 body:not(.home-page) .btn-secondary { border-radius: 0; font-family: var(--font-body); font-size: .67rem; font-weight: 700; letter-spacing: .15em; padding: .92rem 1.15rem; }
 body:not(.home-page) .btn-primary { background: var(--cream); color: var(--ink); }
@@ -701,7 +692,7 @@ body:not(.home-page) .btn-secondary:hover { background: var(--cream); color: var
 body:not(.home-page) p.breadcrumb { max-width: 1180px !important; margin: 1.2rem auto 0 !important; color: var(--text-light); font-size: .68rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 body:not(.home-page) p.breadcrumb a { color: var(--navy); }
 
-body:not(.home-page) main > section:not(.hero) { padding: 5.2rem 5%; }
+body:not(.home-page) main > section:not(.editorial-hero) { padding: 5.2rem 5%; }
 body:not(.home-page) main > section.alt { background: var(--cream); }
 body:not(.home-page) .section-head { max-width: 760px; margin-bottom: 2.7rem; }
 body:not(.home-page) .section-head.center { margin-left: auto; margin-right: auto; }
@@ -754,12 +745,45 @@ body:not(.home-page) button#back-to-top { background: var(--navy); border-radius
 @media (max-width: 900px) {
   body:not(.home-page) header.site-header nav { min-height: 64px; }
   body:not(.home-page) nav .nav-links { top: 64px; background: var(--cream-soft); }
-  body:not(.home-page) section.hero { min-height: 590px; }
-  body:not(.home-page) section.hero::before { background: linear-gradient(0deg, rgba(36,34,47,.96) 0%, rgba(36,34,47,.74) 57%, rgba(36,34,47,.16) 100%); }
-  body:not(.home-page) section.hero article.hero-content { align-self: flex-end; margin: 0; padding: 3rem 7%; }
-  body:not(.home-page) section.hero h1 { font-size: clamp(2.55rem, 11vw, 4rem); }
-  body:not(.home-page) main > section:not(.hero) { padding: 3.8rem 5%; }
+  body:not(.home-page) main > section:not(.editorial-hero) { padding: 3.8rem 5%; }
   body:not(.home-page) ul.check-list,
   body:not(.home-page) ol.steps { grid-template-columns: 1fr; }
   body:not(.home-page) article.split figure { box-shadow: 12px 12px 0 var(--cream), 0 20px 35px rgba(36,34,47,.14); }
 }
+
+/* ---------- Shared UI helpers (approved design tokens alignment) ---------- */
+:focus-visible {
+  outline: 2px solid var(--gold-dark, #8a6a3f);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link:focus {
+  position: fixed;
+  inset: auto 0 auto 0;
+  width: auto;
+  height: auto;
+  padding: 12px 18px;
+  margin: 0;
+  clip: auto;
+  overflow: visible;
+  white-space: normal;
+  z-index: 9999;
+  background: var(--gold-dark, #8a6a3f);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Preserve approved token references without forcing base overrides */
+body { scroll-behavior: smooth; }

@@ -1,7 +1,7 @@
 // ============================================================
 // Dra. Elaine Morch — Script principal
-// Usado apenas onde HTML puro (details/summary, CSS) não resolve:
-// menu mobile, botão "voltar ao topo" e destaque do link ativo.
+// Responsabilidades: scroll reveal, mobile menu, active link,
+// back-to-top, short player e melhorias de acessibilidade.
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -44,21 +44,42 @@ document.addEventListener('DOMContentLoaded', function () {
     toggle.addEventListener('click', function () {
       var isOpen = navLinks.classList.toggle('open');
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+      if (isOpen) {
+        var firstLink = navLinks.querySelector('a, summary');
+        if (firstLink) firstLink.focus();
+      } else {
+        toggle.focus();
+      }
     });
 
     // Fecha o menu mobile ao clicar em um link
     navLinks.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
       });
+    });
+
+    // Fecha com Escape
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && navLinks.classList.contains('open')) {
+        navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
     });
   }
 
   // ---------- Destaque do link ativo no menu ----------
-  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  var currentPageRaw = window.location.pathname.split('/').pop() || 'index.html';
+  var currentPage = currentPageRaw.split('#')[0];
   document.querySelectorAll('.nav-links a').forEach(function (link) {
-    var href = link.getAttribute('href');
-    if (href === currentPage) {
+    var href = link.getAttribute('href') || '';
+    var hrefClean = href.split('#')[0].split('?')[0];
+    var isCurrent = hrefClean === currentPage || hrefClean === './' + currentPage || hrefClean === currentPageRaw || hrefClean === './' + currentPageRaw;
+    if (isCurrent) {
       link.classList.add('active');
       var parentDetails = link.closest('details.dropdown');
       if (parentDetails) {
@@ -84,9 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ---------- Short em destaque ----------
-  // Para publicar um vídeo, defina data-short-url no elemento .short-player
-  // com uma URL de Short do YouTube. Este ponto único permite automatizar
-  // a troca do vídeo posteriormente, sem mudar o layout ou o player.
   var shortPlayer = document.querySelector('.short-player[data-short-url]');
 
   function getYouTubeVideoId(url) {
@@ -125,5 +143,21 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   }
+
+  // ---------- Acessibilidade: details/summary ----------
+  document.querySelectorAll('details.dropdown').forEach(function (details) {
+    details.addEventListener('toggle', function () {
+      var open = details.open;
+      details.querySelectorAll('summary').forEach(function (summary) {
+        summary.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      details.querySelectorAll('a').forEach(function (a) {
+        a.setAttribute('aria-hidden', open ? 'false' : 'true');
+      });
+    });
+    if (!details.hasAttribute('aria-expanded')) {
+      details.setAttribute('aria-expanded', details.open ? 'true' : 'false');
+    }
+  });
 
 });

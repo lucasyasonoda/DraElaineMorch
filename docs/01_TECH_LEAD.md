@@ -14,6 +14,8 @@ O objetivo principal do site é:
 
 Trata-se de um site **estático, responsivo e acessível**, produzido em HTML + CSS + JS vanilla, sem backend e sem build tool, otimizado para entrega rápida e manutenção simples. A identidade visual segue estilo editorial premium, com paleta quente em tons de blush, gold e creme, tipografia serifada para títulos e sans-serif para corpo.
 
+A **página `index.html` é a referência piloto do projeto**. Cabeçalho, tipografia, espaçamentos e containers devem ser padronizados com base nela e replicados em todas as páginas internas.
+
 ---
 
 ## 2. Público-alvo
@@ -42,7 +44,7 @@ Observação: tono da comunicação é **acolhedor, técnico mas acessível, sem
 ### 3.2 Estrutura do projeto
 ```
 DraElaineMorch/
-├── index.html
+├── index.html               # Página piloto / referência visual
 ├── css/
 │   └── style.css
 ├── js/
@@ -75,13 +77,15 @@ DraElaineMorch/
 
 ### 3.3 Requisitos funcionais atuais
 - Navegação fixa com menu dropdown e CTA de agendamento
+- **Menu dropdown de Especializações no cabeçalho fixo superior**
 - Mobile menu toggle com animação suave
 - Hero editorial com imagem de fundo + CTA
 - Seções reutilizáveis: stats, cards, CTA final, FAQ (details/summary)
 - Animações de entrada via Intersection Observer
 - Botão "voltar ao topo"
 - Player configurável de YouTube Short via atributo `data-short-url`
-- Footer s itemizado por área de tratamento
+- **Botão flutuante de WhatsApp alinhado à marca, apontando para `https://wa.me/5517981354913`**
+- **Rodapé minimalista, compacto e elegante**
 
 ### 3.4 Requisitos não-funcionais
 - Performance: assets otimizados, lazy-load por contexto
@@ -90,6 +94,7 @@ DraElaineMorch/
 - Responsividade: breakpoints principais em 900px e ajustes com clamp()/vw
 - Navegação: funcionar corretamente com JavaScript indisponível (HTML-first)
 - Compatibilidade: evergreen browsers; sem suporte a IE11
+- **Padronização visual:** todas as páginas devem herdar header/footer/containers/tipografia de `index.html`
 
 ### 3.5 Diretrizes de conteúdo
 - TOM: profissional, humano, técnico, acolhedor
@@ -129,71 +134,39 @@ Entregas visuais e de sistema de design.
 - [x] **Assets finais**
   - Logo PNG otimizado
   - Imagens WebP + fallback JPEG (se aplicável)
+- [ ] **Menu dropdown Especializações**
+  - Estrutura `details/summary` alinhada ao header piloto
+  - Estados aberto/fechado consistentes
+- [ ] **Rodapé minimalista**
+  - Layout compacto e elegante derivado de `index.html`
+  - Padronização para todas as páginas
+- [ ] **Botão WhatsApp flutuante refinado**
+  - Design sofisticado alinhado à paleta oficial
+  - Link canônico `https://wa.me/5517981354913`
 
 ### Dev (front-end)
 Implementação, integração e manutenção técnica.
 
-- [x] **Estrutura HTML semântica**
-  - header/nav/main/footer em todas as páginas
-  - headings h1-h3 coerentes por página
-- [x] **Navegação e acessibilidade**
-  - Menu mobile funcional
-  - Active state visível
-  - Skip link + focus-visible aplicados
-- [x] **Performance**
-  - Tokens centralizados; CSS revisado sem regras mortas aparentes
-  - Font display swap mantido pelo Google Fonts
-- [x] **SEO on-page**
-  - Title, description, canonical, h1 único por página
-  - Breadcrumbs estruturados
-- [x] **JavaScript**
-  - Intersection Observer para `[data-reveal]`
-  - Back-to-top e short player funcionando
-  - Melhorias de acessibilidade no menu e active link
-- [x] **Consistência de GET aliases**
-  - URL canônica em `index.html`
-  - Links internos usando caminhos relativos corretos
-- [x] **Tratamento de erros**
-  - Fallback para imagens disponível
-  - URL de Short com fallback `.is-unconfigured`
-- [x] **Integração com docs**
-  - `docs/*.md` criados e sincronizados com a realidade do código
-- [x] **Checklist final antes de deploy**
-  - Estrutura validada; QA executado; `03_DEV.md` documentado
+- [x] **Estrutura HTML semântica** baseline já entregue
+- [x] **Navegação e acessibilidade** baseline já entregue
+- [ ] **Padronização index.html como referência**
+  - Replicar header, tipografia, espaçamentos e containers em `pages/*.html`
+- [ ] **Menu dropdown Especializações**
+  - Implementar no header fixo com `details/summary` nativo
+- [ ] **WhatsApp flutuante com URL canônica**
+  - Atualizar link e manter comportamento responsivo
 
 ### Tester
 Validação manual e por checklist de qualidade.
 
-- [x] **Navegação cross-page**
-  - Todos os links internos validados estaticamente
-  - Navegação DOM funciona entre `/pages/*.html` e `index.html`
-- [x] **Responsividade**
-  - Breakpoints declarados em `900px`
-  - Objetos de layout aplicados conforme `02_DESIGNER.md`
-- [x] **CTAs**
-  - Botão "Agendar consulta" com `mailto:contato@draelaine.com.br`
-  - Links de agendamento presentes nas páginas
-- [x] **SEO / Meta**
-  - Title e description presentes nas páginas
-  - Favicon presente
-- [x] **Acessibilidade**
-  - Skip link + `main id="main"` aplicados
-  - Navegação por teclado via `details/summary` nativo
-  - Imagens com alt/texto alternativo
-- [x] **FAQ**
-  - `details/summary` nativo
-  - Acessível por teclado
-- [x] **Short player**
-  - `data-short-url` + fallback `.is-unconfigured`
-  - Atributos de embed aplicados no JS
-- [x] **Console e erros**
-  - Sem erros de sintaxe aparentes
-  - Sem referências quebradas em análise estática
-- [x] **Cross-browser / dispositivos**
-  - HTML-first sem dependência obrigatória de JS
-- [x] **Fluxo final**
-  - Voltar ao topo via botão com classe `.show`
-  - Menu mobile persistente e fechamento lógico aplicado
+- [ ] **Consistência cross-page**
+  - Header/footer/containers idênticos em todas as páginas
+- [ ] **Menu Especializações**
+  - Abertura/fechamento por clique e teclado
+- [ ] **WhatsApp CTA**
+  - Link apontando para `https://wa.me/5517981354913`
+- [ ] **Responsividade**
+  - Validação em 375px, 768px e 1440px
 
 ---
 

@@ -4,12 +4,12 @@
 ---
 
 ## 1. Arquivos criados
-Nenhum arquivo novo de código foi criado; apenas o documento `docs/03_DEV.md` é novo.
+Nenhum arquivo novo de código foi criado; atualizado apenas `docs/03_DEV.md`.
 
 ## 2. Arquivos alterados
+- `index.html`
 - `css/style.css`
 - `js/script.js`
-- `index.html`
 - `pages/clareamento-intimo.html`
 - `pages/estetica-intima.html`
 - `pages/hormonios-bioidenticos.html`
@@ -25,46 +25,45 @@ Nenhum arquivo novo de código foi criado; apenas o documento `docs/03_DEV.md` �
 
 ## 3. Decisões de código
 
-### 3.1 Acessibilidade
-- **Skip link**: adicionado `<a href="#main" class="skip-link">Pular para o conteúdo</a>` logo após `<body>` em todas as páginas.
-- **Landmark principal**: garantido `<main id="main">` para destino do skip link.
-- **Focus visível**: adicionado `:focus-visible` com outline em `var(--gold-dark)` e offset.
-- **Menu mobile**: mantido comportamento existente e adicionado fechamento com `Escape` e realimentação de foco no toggle.
-- **Dropdowns**: adicionados atributos `aria-expanded` sincronizados em `details`/`summary` e `aria-hidden` em links internos do submenu.
+### 3.1 Padronização do header alinhado ao `index.html`
+- Trocado o header antigo das páginas internas pelo modelo unificado usado em `index.html`.
+- Adicionado item `Especializações` como dropdown `details/summary` com links diretos para todas as páginas de especializações.
+- Garantido alinhamento superior pelo skip link imediatamente após `<body>` em todas as páginas.
 
-### 3.2 Design System / CSS
-- Inserção do bloco `:root` com tokens padrão no início do CSS, alinhado ao `docs/02_DESIGNER.md`.
-- Adicionados helpers `.skip-link` e `:focus-visible` no final do CSS para não alterar regras existentes.
-- Mantidas todas as regras existentes, evitando sobrescrita do tema home/pages já implementado.
+### 3.2 Rodapé minimalista
+- Reescrito o footer com layout compacto: linha de marca + links essenciais; linha inferior de copyright.
+- Replicado em todas as páginas, mantendo proporções e espaçamentos idênticos.
 
-### 3.3 JavaScript
-- Atualizado `js/script.js` para versão com comentários remanejados e melhorias de acessibilidade.
-- Corrigida lógica de link ativo para lidar com URLs relativas e hash, evitando false negatives quando o caminho não é exatamente igual devido a `../pages/...` ou `?query`.
-- Adicionado fechamento do menu mobile com `Escape` e retorno de foco para o botão toggle.
+### 3.3 WhatsApp flutuante
+- Corrigidos links incorretos para o WhatsApp; agora usam `https://wa.me/5517981354913`.
+- Botão flutuante fixo no canto inferior esquerdo com ícone SVG embutido e design alinhado à paleta.
+- Removidas inconsistências entre botão secundário e flutuante.
 
-### 3.4 HTML
-- Aplicadas melhorias de acessibilidade em massa em `index.html` e `pages/*.html` via regex:
-  - skip link
-  - `main id="main"`
-  - padronização de `aria-expanded`
-- Mantida estrutura semântica e atributos ARIA existentes.
+### 3.4 JavaScript
+- JS já estava alinhado; nenhuma alteração necessária nesta sprint além do suporte já existente.
+- Mantido fechamento do menu mobile com `Escape` e retorno de foco no toggle.
 
 ## 4. Comandos executados
 ```bash
 cd /c/temp/elaine-new/DraElaineMorch
 
-# Inspeção de alterações
+# Inspeção e ajustes via script
+python scripts/fix_headers_and_whatsapp.py
+
 git status
 git diff --stat
+git checkout -b develop
+git add .
+git commit -m "feat: adiona documentacao dos agentes e ajustes de layout"
+git push -u origin develop
 ```
 
-Nenhum comando de build/test automatizado foi executado, pois o projeto é HTML/CSS/JS vanilla sem bundler. A verificação foi feita por inspeção estática do código.
-
 ## 5. Como rodar localmente
-1. Abra o arquivo `index.html` em um navegador evergreen.
+1. Abra `index.html` em um navegador evergreen.
 2. Navegue pelas páginas em `pages/`.
-3. Valide responsividade nos breakpoints 375px, 768px e 1440px.
+3. Valide patches padronizados de header/footer e botão WhatsApp.
 
-## 6. Observações
-- QA apontou 2 melhorias: skip link e validação automatizada. Ambas foram endereçadas.
-- Próximo passo recomendado: incluir lint HTML/CSS/JS no fluxo antes do deploy.
+## 6. Observações / Próximos passos
+- Toques finais de CSS de refinamento do footer podem ser feitos pelo Designer/Dev conforme validação visual.
+- Próximo ciclo QA deve validar o dropdown Especializações em runtime.
+- Manter docs sincronizados com alterações futuras.

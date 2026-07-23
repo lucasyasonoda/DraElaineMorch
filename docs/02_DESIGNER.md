@@ -16,6 +16,8 @@ Referência estética:
 - paleta quente com base creme/blush;
 - contraste controlado; sem cores vibrantes agressivas.
 
+**Regra-guia:** `index.html` é a página piloto. Toda página interna deve herdatar sua identidade visual de header, tipografia, espaçamentos e containers.
+
 ---
 
 ## 2. Paleta de cores
@@ -191,7 +193,8 @@ Justificativa: conteúdo colapsa para 1 coluna sem necessidade de breakpoints ad
 
 ## 5. Layout das telas
 
-### 5.1 Header / Navegação
+### 5.1 Header / Navegação — padrão `index.html`
+Todas as páginas devem usar esta estrutura como base:
 - sticky, z-index 1000;
 - altura flexível, com padding interno de 14px;
 - fundo `rgba(255,250,246,.95)` + `backdrop-filter: blur(6px)`;
@@ -200,11 +203,11 @@ Justificativa: conteúdo colapsa para 1 coluna sem necessidade de breakpoints ad
 - lado direito: links + CTA “Agendar Consulta”;
 - no mobile: botão hambúrguer `.menu-toggle` fixo, menu abre como painel full-width inline.
 
-Drop-down:
-- elementos `details/summary` nativos;
-- painel absoluto no desktop, inline no mobile;
-- mínimo `240px`, com padding vertical de `10px 0`;
-- dropdown na versão mobile: sem shadow, sem position absolute.
+#### Menu dropdown de Especializações
+- item `Especializações` no nav como `details/summary`
+- desktop: painel absoluto, mínimo `240px`, com padding vertical de `10px 0`
+- mobile: inline, sem shadow, sem position absolute
+- estados visualmente consistentes com o header piloto
 
 ### 5.2 Hero editorial
 Todas as páginas internas usam `.editorial-hero` com:
@@ -245,17 +248,27 @@ Estrutura padrão:
 6. FAQ (mínimo 3 perguntas);
 7. CTA final.
 
-### 5.6 Footer
-Grid 3 colunas no desktop:
-- coluna 1: marca + tagline;
-- coluna 2: links “Estética Íntima”;
-- coluna 3: links “Saúde Hormonal”.
+### 5.6 Footer — minimalista e compacto
+**Versão enxuta e elegante**, sem tabelas pesadas:
+- 1 linha principal com marca à esquerda e links pequenos à direita;
+- 1 linha inferior centralizada para copyright/disclaimer;
+- espaçamentos reduzidos em relação ao footer anterior;
+- paleta escura coerente com `--ink`/`--cream`;
+- no mobile: 1 coluna central;
 
-Rodapé inferior:
-- copyright centralizado;
-- disclaimer médico obrigatório em todas as páginas.
+```
+Footer desktop:
+[Marca] --------------------- [Links essenciais]
 
-No mobile: 1 coluna central, gap de 34px.
+© Copyright • Disclaimer
+
+Footer mobile:
+[Marca]
+[Links essenciais]
+© Copyright • Disclaimer
+```
+
+Regra: evitar aglomerados visuais; priorizar respiro e legibilidade discreta.
 
 ---
 
@@ -365,11 +378,14 @@ Regras visuais:
 - `.is-unconfigured` deve exibir fallback textual visível.
 
 ### 6.8 Botões flutuantes e utilitários
-#### WhatsApp float
-- `#whatsapp-float` fixo bottom-left (`bottom: 26px; left: 26px`);
-- ícone ☎ (ou SVG futuro) centralizado;
-- tamanho `54px x 54px`, z-index 900;
-- shadow definida por variável.
+#### WhatsApp float — sofisticado
+- `#whatsapp-float` fixo bottom-left;
+- **URL obrigatória:** `https://wa.me/5517981354913`;
+- ícone discreto centralizado (letra/ícone limpo);
+- tamanho modesto e equilibrado;
+- **sofisticação:** sombra sutil, fundo `#25D366`, sem ruído extra;
+- z-index coerente com `.back-to-top`;
+- no mobile, manter afastamento seguro das bordas e dos CTAs do rodapé;
 
 #### Back-to-top
 - `#back-to-top` fixo bottom-right, `46px x 46px`;
@@ -435,7 +451,7 @@ Os objetos abaixo devem ser validados nos breakpoints `375px`, `768px` e `1440px
 | Short player | pilha vertical | texto + player lado a lado |
 | Split | imagem acima do conteúdo | imagem à esquerda |
 | Cards grid | 1 coluna | até 3 colunas quando necessário |
-| Footer | 1 coluna | 3 colunas |
+| Footer | 1 coluna minimalista | 1 linha elegante + copyright |
 
 ---
 
@@ -472,6 +488,8 @@ Proibido:
 Este documento é encerrado quando:
 - todas as seções tiverem entradas preenchidas;
 - paleta aprovada pelo Tech Lead;
-- 2 telas internas validadas (hub page + página de tratamento) a partir deste documento.
+- `index.html` for replicada visualmente nas páginas internas;
+- menu Especializações e footer minimalista aprovados em 2 páginas internas;
+- botão WhatsApp no padrão definido.
 
 Alterações posteriores devem ser registradas como patch neste arquivo antes da implementação no código.

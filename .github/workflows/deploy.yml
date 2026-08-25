@@ -1,28 +1,16 @@
-name: Deploy via FTP Locaweb
-
-on:
-  push:
-    branches:
-      - main
-
+name: Deploy via ftp
+on: push
 jobs:
   deploy:
-    name: FTP Deploy
+    name: Deploy
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout código
-        uses: actions/checkout@v4
+    - uses: actions/checkout@v3
 
-      - name: Sincronizar arquivos via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.HOST }}
-          username: ${{ secrets.USER }}
-          password: ${{ secrets.PASS }}
-          port: 21
-          protocol: ftp
-          security: false
-          local-dir: ./
-          # Descomente a linha abaixo se a Locaweb exigir salvar dentro da pasta public_html:
-          # server-dir: public_html/
+    - name: FTP Deploy Locaweb
+      uses: locaweb/ftp-deploy@1.0.0
+      with:
+        host: ${{ secrets.HOST }} 
+        user: ${{ secrets.USER }}
+        password: ${{ secrets.PASS }}
+        localDir: "dist"

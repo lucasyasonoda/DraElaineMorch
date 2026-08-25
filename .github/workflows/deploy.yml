@@ -14,10 +14,12 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v4
 
-      - name: FTP Deploy Locaweb
-        uses: locaweb/ftp-deploy@1.0.0
+      - name: Sincronizar arquivos via FTP
+        uses: SamKirland/FTP-Deploy-Action@v4.3.5
         with:
-          host: ${{ secrets.HOST }}
-          user: ${{ secrets.USER }}
+          server: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
           password: ${{ secrets.PASS }}
-          localDir: "."
+          local-dir: ./
+          # Caso a Locaweb exija salvar na pasta public_html, descomente a linha abaixo:
+          # server-dir: public_html/

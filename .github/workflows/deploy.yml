@@ -20,6 +20,6 @@ jobs:
           server: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASS }}
+          port: 21
+          protocol: ftp
           local-dir: ./
-          # Caso a Locaweb exija salvar na pasta public_html, descomente a linha abaixo:
-          # server-dir: public_html/

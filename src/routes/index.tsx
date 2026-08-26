@@ -35,13 +35,13 @@ function Home() {
   return (
     <>
       {/* HERO EDITORIAL */}
-      <section className="container-edit pt-6 md:pt-10">
+      <section className="container-edit pt-0">
         <div
-          className="grid lg:grid-cols-[minmax(280px,0.83fr)_minmax(480px,1.42fr)] min-h-[min(720px,calc(100vh-80px))] overflow-hidden"
+          className="grid lg:grid-cols-[minmax(280px,0.83fr)_minmax(480px,1.42fr)] lg:aspect-[2/1] overflow-hidden"
           style={{ background: "var(--ink)" }}
         >
           <div
-            className="min-h-[340px] lg:min-h-[720px] bg-cover bg-[center_24%] order-1"
+            className="min-h-[340px] lg:min-h-0 bg-cover bg-[center_24%] order-1"
             style={{
               backgroundImage: `linear-gradient(0deg, rgba(36,34,47,.38), transparent 36%), url(${HOME_IMAGES.hero})`,
             }}
@@ -112,10 +112,10 @@ function Home() {
       </section>
 
       {/* STATS */}
-      <section className="container-edit -mt-9 relative z-10" ref={stats.ref}>
-        <div className={stats.className}>
+      <section className="container-edit -mt-16 relative z-10 pt-8 md:pt-12" ref={stats.ref}>
+        <div className={`${stats.className} max-w-[74%] mx-auto`}>
           <ul
-            className="grid grid-cols-3 gap-2 md:gap-6 py-6 px-4 md:px-8"
+            className="grid grid-cols-3 gap-2 md:gap-6 py-4 md:py-5 px-4 md:px-8"
             style={{ background: "var(--cream)" }}
           >
             {[

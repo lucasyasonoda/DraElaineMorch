@@ -36,6 +36,7 @@ function TratamentosHub() {
           </>
         }
         lead="Cada área reúne um conjunto de tratamentos pensados para diferentes fases e necessidades. Explore o que está incluído em cada uma e entenda quando faz sentido agendar uma consulta."
+        image={CATEGORIES[0].image}
       />
 
       <section className="container-edit py-16 md:py-24 space-y-6">

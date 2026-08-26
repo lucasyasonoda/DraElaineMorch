@@ -1,6 +1,6 @@
 export function CTASection({ title, text }: { title: string; text?: string }) {
   return (
-    <section className="bg-foreground text-background">
+    <section className="text-background" style={{ backgroundColor: "#24222F" }}>
       <div className="container-edit py-16 md:py-20 text-center">
         <h2 className="section-title max-w-2xl mx-auto" style={{ color: "var(--cream-soft)" }}>
           {title}

@@ -65,19 +65,19 @@ function CategoryPage() {
           <h2 className="section-title mt-6">Escolha o cuidado ideal para o seu momento</h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border mt-14">
+        <div className="grid max-w-5xl mx-auto gap-5 md:gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-14">
           {treatments.map((t) => (
             <Link
               key={t.slug}
               to="/tratamentos/$categoria/$slug"
               params={{ categoria: category.slug, slug: t.slug }}
-              className="group bg-background flex flex-col"
+              className="group bg-background border border-border transition hover:border-foreground"
             >
               <div
-                className="h-44 bg-cover bg-center"
+                className="w-full aspect-[5/3] bg-cover bg-center"
                 style={{ backgroundImage: `url(${t.image})` }}
               />
-              <div className="p-6 flex-1 flex flex-col">
+              <div className="p-5 md:p-6 flex-1 flex flex-col">
                 <h3 className="card-title group-hover:text-[color:var(--gold)] transition">
                   {t.navLabel}
                 </h3>

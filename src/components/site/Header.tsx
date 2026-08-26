@@ -13,17 +13,20 @@ export function Header() {
         <Link
           to="/"
           className="text-sm tracking-[0.15em] uppercase font-semibold"
-          style={{ color: "var(--navy)" }}
+          style={{ color: "#24222F" }}
         >
           Dra. Elaine Morch
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[.7rem] xl:text-xs uppercase tracking-[0.12em] font-semibold">
+        <nav
+          className="hidden lg:flex items-center gap-6 xl:gap-8 text-[.7rem] xl:text-xs uppercase tracking-[0.12em] font-semibold"
+          style={{ color: "#24222F" }}
+        >
           <Link
             to="/"
             activeOptions={{ exact: true }}
-            activeProps={{ style: { color: "var(--navy)" } }}
-            inactiveProps={{ style: { color: "var(--navy)", opacity: 0.6 } }}
+            activeProps={{ style: { color: "#24222F" } }}
+            inactiveProps={{ style: { color: "#24222F" } }}
             className="hover:opacity-100 transition"
           >
             Início
@@ -37,7 +40,7 @@ export function Header() {
             <Link
               to="/tratamentos"
               className="flex items-center gap-1 transition hover:opacity-100"
-              style={{ color: "var(--navy)", opacity: 0.6 }}
+              style={{ color: "#24222F" }}
             >
               Tratamentos <ChevronDown size={14} />
             </Link>
@@ -54,7 +57,8 @@ export function Header() {
                     <Link
                       to="/tratamentos/$categoria"
                       params={{ categoria: cat.slug }}
-                      className="block px-2 py-1.5 font-serif text-base hover:text-[color:var(--gold)] transition"
+                      className="block px-2 py-1.5 text-base font-semibold uppercase tracking-[0.12em] transition"
+                      style={{ color: "#24222F", fontFamily: "var(--font-sans)" }}
                     >
                       {cat.navLabel}
                     </Link>
@@ -64,7 +68,12 @@ export function Header() {
                           <Link
                             to="/tratamentos/$categoria/$slug"
                             params={{ categoria: cat.slug, slug: t.slug }}
-                            className="block px-2 py-1.5 rounded text-sm text-muted-foreground hover:bg-secondary hover:text-foreground transition"
+                            className="block px-2 py-1.5 rounded text-sm uppercase tracking-[0.08em] transition"
+                            style={{
+                              color: "#24222F",
+                              fontFamily: "var(--font-sans)",
+                              fontWeight: 400,
+                            }}
                           >
                             {t.navLabel}
                           </Link>
@@ -77,23 +86,16 @@ export function Header() {
             </div>
           </div>
 
-          <a
-            href="/#sobre"
-            className="hover:opacity-100 transition"
-            style={{ color: "var(--navy)", opacity: 0.6 }}
-          >
+          <a href="/#sobre" className="hover:opacity-100 transition" style={{ color: "#24222F" }}>
             A consulta
           </a>
-          <a
-            href="/#contato"
-            className="hover:opacity-100 transition"
-            style={{ color: "var(--navy)", opacity: 0.6 }}
-          >
+          <a href="/#contato" className="hover:opacity-100 transition" style={{ color: "#24222F" }}>
             Contato
           </a>
           <a
             href="/#contato"
-            className="inline-flex items-center px-5 py-2.5 bg-foreground text-background text-xs tracking-widest uppercase hover:bg-foreground/85 transition"
+            className="inline-flex items-center px-5 py-2.5 text-xs tracking-widest uppercase transition"
+            style={{ backgroundColor: "#24222F", color: "#FFFFFF" }}
           >
             Agendar consulta
           </a>
@@ -106,8 +108,11 @@ export function Header() {
 
       {open && (
         <div className="lg:hidden border-t border-border bg-background max-h-[80vh] overflow-y-auto">
-          <div className="container-edit py-4 flex flex-col gap-4 text-sm">
-            <Link to="/" onClick={() => setOpen(false)}>
+          <div
+            className="container-edit py-4 flex flex-col gap-4 text-sm"
+            style={{ color: "#24222F" }}
+          >
+            <Link to="/" onClick={() => setOpen(false)} style={{ color: "#24222F" }}>
               Início
             </Link>
 
@@ -118,6 +123,7 @@ export function Header() {
                   params={{ categoria: cat.slug }}
                   onClick={() => setOpen(false)}
                   className="font-serif text-base"
+                  style={{ color: "#24222F" }}
                 >
                   {cat.navLabel}
                 </Link>
@@ -129,6 +135,7 @@ export function Header() {
                       params={{ categoria: cat.slug, slug: t.slug }}
                       onClick={() => setOpen(false)}
                       className="text-muted-foreground"
+                      style={{ color: "#24222F" }}
                     >
                       {t.navLabel}
                     </Link>
@@ -137,16 +144,17 @@ export function Header() {
               </div>
             ))}
 
-            <a href="/#sobre" onClick={() => setOpen(false)}>
+            <a href="/#sobre" onClick={() => setOpen(false)} style={{ color: "#24222F" }}>
               A consulta
             </a>
-            <a href="/#contato" onClick={() => setOpen(false)}>
+            <a href="/#contato" onClick={() => setOpen(false)} style={{ color: "#24222F" }}>
               Contato
             </a>
             <a
               href="/#contato"
               onClick={() => setOpen(false)}
-              className="inline-flex justify-center px-5 py-3 bg-foreground text-background uppercase tracking-widest text-xs"
+              className="inline-flex justify-center px-5 py-3 uppercase tracking-widest text-xs"
+              style={{ backgroundColor: "#24222F", color: "#FFFFFF" }}
             >
               Agendar consulta
             </a>

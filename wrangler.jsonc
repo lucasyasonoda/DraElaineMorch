@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "dra-elaine-morch",
+  "name": "draelainemorch",
   "compatibility_date": "2026-08-26",
   "assets": {
     "directory": "./dist/client"

@@ -92,7 +92,9 @@ function Home() {
               </p>
               <div className="flex flex-wrap gap-3 mt-4">
                 <a
-                  href="/#contato"
+                  href={`https://wa.me/${SITE.whatsapp}`}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center px-5 py-3.5 text-[.68rem] font-bold uppercase tracking-widest transition"
                   style={{ background: "var(--cream)", color: "var(--ink)" }}
                 >
@@ -257,7 +259,9 @@ function Home() {
             Seu bem-estar começa com uma conversa.
           </h2>
           <a
-            href={`mailto:${SITE.email}`}
+            href={`https://wa.me/${SITE.whatsapp}`}
+            target="_blank"
+            rel="noreferrer"
             className="mt-10 inline-flex items-center px-8 py-4 text-xs tracking-widest uppercase"
             style={{ background: "var(--cream)", color: "var(--ink)" }}
           >

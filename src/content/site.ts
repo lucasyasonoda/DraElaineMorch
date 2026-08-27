@@ -6,12 +6,13 @@ export const META_PIXEL_ID = import.meta.env.VITE_META_PIXEL_ID ?? "";
 export const SITE = {
   name: "Dra. Elaine Morch",
   tagline: "Ginecologista em Sorocaba",
-  email: "contato@draelaine.com.br",
   city: "Sorocaba, SP",
-  // ⏳ O site anterior não tinha um número de WhatsApp real configurado — o botão apenas
-  // levava até a seção de contato. Preenchendo este campo, o botão flutuante e os links
-  // "Falar pelo WhatsApp" passam a abrir uma conversa real automaticamente.
-  whatsapp: "",
+  whatsapp: "15998338258",
+  social: {
+    facebook: "https://www.facebook.com/share/1EgvGrdBrC/?mibextid=wwXIfr",
+    instagram: "https://www.instagram.com/dra.elainemorch/",
+    youtube: "https://www.youtube.com/@dra.elainemorch",
+  },
 };
 
 export type FaqItem = { q: string; a: string };

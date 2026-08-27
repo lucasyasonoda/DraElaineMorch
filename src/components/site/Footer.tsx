@@ -37,13 +37,53 @@ export function Footer() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>{SITE.city}</li>
             <li>
-              <a href={`mailto:${SITE.email}`} className="hover:text-foreground">
-                {SITE.email}
+              <a
+                href={`https://wa.me/${SITE.whatsapp}`}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-foreground"
+              >
+                WhatsApp
               </a>
             </li>
             <li>
-              <a href="/#contato" className="hover:text-foreground">
+              <a
+                href={`https://wa.me/${SITE.whatsapp}`}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-foreground"
+              >
                 Agendar consulta
+              </a>
+            </li>
+            <li>
+              <a
+                href={SITE.social.instagram}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-foreground"
+              >
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                href={SITE.social.facebook}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-foreground"
+              >
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a
+                href={SITE.social.youtube}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-foreground"
+              >
+                YouTube
               </a>
             </li>
           </ul>

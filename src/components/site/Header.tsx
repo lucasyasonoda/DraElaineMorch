@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { CATEGORIES, getTreatmentsByCategory } from "@/content/site";
+import { CATEGORIES, getTreatmentsByCategory, SITE } from "@/content/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -93,7 +93,9 @@ export function Header() {
             Contato
           </a>
           <a
-            href="/#contato"
+            href={`https://wa.me/${SITE.whatsapp}`}
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center px-5 py-2.5 text-xs tracking-widest uppercase transition"
             style={{ backgroundColor: "#24222F", color: "#FFFFFF" }}
           >
@@ -151,7 +153,9 @@ export function Header() {
               Contato
             </a>
             <a
-              href="/#contato"
+              href={`https://wa.me/${SITE.whatsapp}`}
+              target="_blank"
+              rel="noreferrer"
               onClick={() => setOpen(false)}
               className="inline-flex justify-center px-5 py-3 uppercase tracking-widest text-xs"
               style={{ backgroundColor: "#24222F", color: "#FFFFFF" }}

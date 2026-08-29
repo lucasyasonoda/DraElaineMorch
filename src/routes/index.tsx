@@ -90,19 +90,19 @@ function Home() {
               >
                 Atendimento presencial e online
               </p>
-              <div className="flex flex-wrap gap-3 mt-4">
+              <div className="relative z-30 flex flex-wrap gap-3 mt-4">
                 <a
                   href={`https://wa.me/${SITE.whatsapp}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center px-5 py-3.5 text-[.68rem] font-bold uppercase tracking-widest transition"
+                  className="inline-flex items-center px-5 py-3.5 text-[.68rem] font-bold uppercase tracking-widest transition relative z-30"
                   style={{ background: "var(--cream)", color: "var(--ink)" }}
                 >
                   Agendar consulta
                 </a>
                 <Link
                   to="/tratamentos"
-                  className="inline-flex items-center gap-2 px-5 py-3.5 border text-[.68rem] font-bold uppercase tracking-widest transition"
+                  className="inline-flex items-center gap-2 px-5 py-3.5 border text-[.68rem] font-bold uppercase tracking-widest transition relative z-30"
                   style={{ borderColor: "rgba(221,217,206,.8)", color: "var(--cream-soft)" }}
                 >
                   Conhecer tratamentos <ArrowRight size={14} />
@@ -114,7 +114,7 @@ function Home() {
       </section>
 
       {/* STATS */}
-      <section className="container-edit -mt-16 relative z-10 pt-8 md:pt-12" ref={stats.ref}>
+      <section className="container-edit -mt-16 relative z-0 pt-8 md:pt-12" ref={stats.ref}>
         <div className={`${stats.className} max-w-[74%] mx-auto`}>
           <ul
             className="grid grid-cols-3 gap-2 md:gap-6 py-4 md:py-5 px-4 md:px-8"

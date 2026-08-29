@@ -58,16 +58,16 @@ import heroHomeImg from "@/assets/hero-home.jpg";
 import heroEsteticaImg from "@/assets/hero-estetica.jpg";
 import heroSaudeImg from "@/assets/hero-saude.jpg";
 import sobreDraElaineImg from "@/assets/sobre-dra-elaine.jpg";
-import laserImg from "@/assets/laser-intimo.jpg";
-import ninfoplastiaImg from "@/assets/ninfoplastia.jpg";
-import radiofrequenciaImg from "@/assets/radiofrequencia.jpg";
-import clareamentoImg from "@/assets/clareamento.jpg";
-import preenchimentoImg from "@/assets/preenchimento.jpg";
-import menopausaImg from "@/assets/menopausa.jpg";
-import reposicaoHormonalImg from "@/assets/reposicao-hormonal.jpg";
-import hormoniosBioidenticosImg from "@/assets/hormonios-bioidenticos.jpg";
-import implantesHormonaisImg from "@/assets/implantes-hormonais.jpg";
-import incontinenciaUrinariaImg from "@/assets/incontinencia-urinaria.jpg";
+import laserCardImg from "@/assets/01-laser-intimo.jpg";
+import ninfoplastiaCardImg from "@/assets/02-ninfoplastia.jpg";
+import radiofrequenciaCardImg from "@/assets/03-radiofrequencia-intima.jpg";
+import clareamentoCardImg from "@/assets/04-clareamento-intimo.jpg";
+import preenchimentoCardImg from "@/assets/05-preenchimento-intimo.jpeg";
+import menopausaCardImg from "@/assets/06-menopausa.jpeg";
+import reposicaoHormonalCardImg from "@/assets/07-reposicao-hormonal.jpeg";
+import hormoniosBioidenticosCardImg from "@/assets/08-hormonios-bioidenticos.jpg";
+import implantesHormonaisCardImg from "@/assets/09-implantes-hormonais.jpeg";
+import incontinenciaUrinariaCardImg from "@/assets/10-incontinencia-urinaria.jpeg";
 
 export const CATEGORIES: Category[] = [
   {
@@ -145,7 +145,7 @@ export const TREATMENTS: Treatment[] = [
     lead: "Um tratamento não cirúrgico que rejuvenesce, hidrata e fortalece os tecidos da região vaginal — com resultados reais e tempo de recuperação mínimo.",
     cardDescription:
       "Rejuvenescimento não cirúrgico que hidrata, firma e melhora o conforto vaginal.",
-    image: laserImg,
+    image: laserCardImg,
     indicatedFor: [
       "Você sente ressecamento ou desconforto vaginal, especialmente após a menopausa ou amamentação",
       "Percebe perda de firmeza ou elasticidade nos tecidos íntimos",
@@ -205,7 +205,7 @@ export const TREATMENTS: Treatment[] = [
     eyebrow: "Estética Íntima",
     lead: "Um procedimento cirúrgico delicado que reduz e harmoniza os pequenos lábios vaginais, aliviando desconfortos físicos e devolvendo autoestima.",
     cardDescription: "Procedimento cirúrgico delicado para conforto físico e harmonia estética.",
-    image: ninfoplastiaImg,
+    image: ninfoplastiaCardImg,
     indicatedFor: [
       "Você sente desconforto físico ao praticar exercícios, usar roupas de banho ou manter relações sexuais",
       "Os pequenos lábios são assimétricos ou proeminentes de forma que te incomoda",
@@ -260,7 +260,7 @@ export const TREATMENTS: Treatment[] = [
     eyebrow: "Estética Íntima",
     lead: "Tecnologia de ponta que estimula o colágeno, melhora a firmeza e combate o ressecamento vaginal — de forma segura, confortável e sem tempo de parada.",
     cardDescription: "Estímulo de colágeno para firmeza e rejuvenescimento, sem cirurgia.",
-    image: radiofrequenciaImg,
+    image: radiofrequenciaCardImg,
     indicatedFor: [
       "Sentem flacidez ou perda de elasticidade na região íntima",
       "Têm ressecamento vaginal causado por menopausa, pós-parto ou mudanças hormonais",
@@ -314,7 +314,7 @@ export const TREATMENTS: Treatment[] = [
     eyebrow: "Estética Íntima",
     lead: "Tratamento seguro e eficaz para uniformizar a coloração da pele da região íntima, com protocolos médicos personalizados.",
     cardDescription: "Uniformização da tonalidade da pele com protocolos médicos seguros.",
-    image: clareamentoImg,
+    image: clareamentoCardImg,
     indicatedFor: [
       "Você sente incômodo com o escurecimento da região íntima (virilha, grandes lábios, região perianal)",
       "Tem manchas causadas por atrito, depilação frequente, alterações hormonais ou pós-gravidez",
@@ -362,7 +362,7 @@ export const TREATMENTS: Treatment[] = [
     eyebrow: "Estética Íntima",
     lead: "Procedimento minimamente invasivo que restaura volume e firmeza nos grandes lábios, com resultado imediato e natural.",
     cardDescription: "Volume e firmeza natural com ácido hialurônico e resultado imediato.",
-    image: preenchimentoImg,
+    image: preenchimentoCardImg,
     indicatedFor: [
       "Percebem perda de volume nos grandes lábios com o envelhecimento ou emagrecimento",
       "Sentem desconforto físico ao sentar, pedalar ou praticar atividades físicas por falta de preenchimento",
@@ -414,7 +414,7 @@ export const TREATMENTS: Treatment[] = [
     eyebrow: "Saúde Hormonal",
     lead: "A menopausa é uma fase natural da vida da mulher, mas não precisa ser sinônimo de sofrimento. Com acompanhamento médico especializado, você atravessa essa transição com mais saúde, equilíbrio e bem-estar.",
     cardDescription: "Acompanhamento completo para climatério, menopausa e qualidade de vida.",
-    image: menopausaImg,
+    image: menopausaCardImg,
     aboutIntro: [
       "A menopausa é definida como a interrupção definitiva da menstruação, confirmada após 12 meses consecutivos sem ciclo menstrual. Ocorre em média entre os 45 e 55 anos e marca o fim da capacidade reprodutiva natural.",
       "Antes dela, existe o climatério — o período de transição que pode durar anos, com os ovários produzindo cada vez menos estrogênio e progesterona. É nessa fase que surgem os primeiros sintomas.",
@@ -497,7 +497,7 @@ export const TREATMENTS: Treatment[] = [
     eyebrow: "Saúde Hormonal",
     lead: "A terapia hormonal personalizada pode transformar a forma como você vive a menopausa e o climatério — com mais energia, disposição, qualidade de sono e bem-estar.",
     cardDescription: "Acompanhamento completo para climatério, menopausa e qualidade de vida.",
-    image: reposicaoHormonalImg,
+    image: reposicaoHormonalCardImg,
     indicatedFor: [
       "Tem fogachos (ondas de calor) frequentes que atrapalham seu dia a dia e o sono",
       "Sente irritabilidade, oscilações de humor ou ansiedade sem causa aparente",
@@ -551,7 +551,7 @@ export const TREATMENTS: Treatment[] = [
     eyebrow: "Saúde Hormonal",
     lead: "Hormônios com a mesma estrutura dos produzidos pelo seu organismo — para uma reposição mais natural, personalizada e com melhor tolerância.",
     cardDescription: "Acompanhamento completo para climatério, menopausa e qualidade de vida.",
-    image: hormoniosBioidenticosImg,
+    image: hormoniosBioidenticosCardImg,
     indicatedFor: [
       "Mulheres em climatério ou menopausa com sintomas hormonais",
       "Quem não respondeu bem ou não tolerou hormônios sintéticos convencionais",
@@ -608,7 +608,7 @@ export const TREATMENTS: Treatment[] = [
     eyebrow: "Saúde Hormonal",
     lead: "Pequenos pellets implantados sob a pele que liberam hormônios de forma constante e controlada por meses — para quem quer praticidade e estabilidade no tratamento hormonal.",
     cardDescription: "Acompanhamento completo para climatério, menopausa e qualidade de vida.",
-    image: implantesHormonaisImg,
+    image: implantesHormonaisCardImg,
     indicatedFor: [
       "Mulheres em menopausa ou climatério com sintomas hormonais",
       "Quem tem dificuldade ou incômodo com o uso diário de outros métodos (géis, comprimidos, adesivos)",
@@ -666,7 +666,7 @@ export const TREATMENTS: Treatment[] = [
     eyebrow: "Saúde Hormonal",
     lead: "A perda involuntária de urina afeta milhões de mulheres — e é muito mais tratável do que se imagina. Você não precisa conviver com isso.",
     cardDescription: "Acompanhamento completo para climatério, menopausa e qualidade de vida.",
-    image: incontinenciaUrinariaImg,
+    image: incontinenciaUrinariaCardImg,
     indicatedFor: [
       "Perde urina ao tossir, espirrar, rir ou durante exercícios físicos",
       "Sente urgência intensa e frequente de urinar",

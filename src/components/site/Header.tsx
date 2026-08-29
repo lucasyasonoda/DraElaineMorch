@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Facebook, Instagram, Youtube } from "lucide-react";
 import { CATEGORIES, getTreatmentsByCategory, SITE } from "@/content/site";
 
 export function Header() {
@@ -92,6 +92,36 @@ export function Header() {
           <a href="/#contato" className="hover:opacity-100 transition" style={{ color: "#24222F" }}>
             Contato
           </a>
+          <div className="flex items-center gap-2 pl-2">
+            <a
+              href={SITE.social.facebook}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook da Dra. Elaine Morch"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-[color:var(--ink)] transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
+            >
+              <Facebook size={15} />
+            </a>
+            <a
+              href={SITE.social.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram da Dra. Elaine Morch"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-[color:var(--ink)] transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
+            >
+              <Instagram size={15} />
+            </a>
+            <a
+              href={SITE.social.youtube}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="YouTube da Dra. Elaine Morch"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-[color:var(--ink)] transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
+            >
+              <Youtube size={15} />
+            </a>
+          </div>
+
           <a
             href={`https://wa.me/${SITE.whatsapp}`}
             target="_blank"
@@ -152,6 +182,36 @@ export function Header() {
             <a href="/#contato" onClick={() => setOpen(false)} style={{ color: "#24222F" }}>
               Contato
             </a>
+            <div className="flex items-center justify-center gap-3 pt-2">
+              <a
+                href={SITE.social.facebook}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook da Dra. Elaine Morch"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-[color:var(--ink)]"
+              >
+                <Facebook size={15} />
+              </a>
+              <a
+                href={SITE.social.instagram}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram da Dra. Elaine Morch"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-[color:var(--ink)]"
+              >
+                <Instagram size={15} />
+              </a>
+              <a
+                href={SITE.social.youtube}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="YouTube da Dra. Elaine Morch"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-[color:var(--ink)]"
+              >
+                <Youtube size={15} />
+              </a>
+            </div>
+
             <a
               href={`https://wa.me/${SITE.whatsapp}`}
               target="_blank"

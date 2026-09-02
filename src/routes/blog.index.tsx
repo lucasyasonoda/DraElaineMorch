@@ -23,6 +23,13 @@ export const Route = createFileRoute('/blog/')({
 
 type Category = 'todos' | 'educacional' | 'novidades' | 'bem-estar'
 
+interface CategoryInfo {
+  id: Category
+  label: string
+  description: string
+  icon: string
+}
+
 function RouteComponent() {
   const [activeCategory, setActiveCategory] = useState<Category>('todos')
 
@@ -31,6 +38,27 @@ function RouteComponent() {
     activeCategory === 'todos'
       ? allPosts
       : getBlogPostsByCategory(activeCategory as 'educacional' | 'novidades' | 'bem-estar')
+
+  const categoriesInfo: CategoryInfo[] = [
+    {
+      id: 'educacional',
+      label: 'Educacional',
+      description: 'Aprenda sobre saúde íntima, hormonal e bem-estar com informações baseadas em ciência.',
+      icon: '📚',
+    },
+    {
+      id: 'novidades',
+      label: 'Novidades',
+      description: 'Fique atualizada sobre as últimas tendências e tecnologias em medicina estética e hormonal.',
+      icon: '✨',
+    },
+    {
+      id: 'bem-estar',
+      label: 'Bem-estar',
+      description: 'Dicas práticas para melhorar sua qualidade de vida e viver plenamente cada fase.',
+      icon: '💪',
+    },
+  ]
 
   const categories: { id: Category; label: string }[] = [
     { id: 'todos', label: 'Todos os artigos' },
@@ -103,6 +131,28 @@ function RouteComponent() {
           </Link>
         </section>
       )}
+
+      {/* Categories Overview */}
+      <section className="py-16 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Navegue por temas</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {categoriesInfo.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setActiveCategory(cat.id)}
+              className="p-6 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all group text-left"
+            >
+              <div className="text-4xl mb-3">{cat.icon}</div>
+              <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
+                {cat.label}
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                {cat.description}
+              </p>
+            </button>
+          ))}
+        </div>
+      </section>
 
       {/* Filter Section */}
       <section className="py-12 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">

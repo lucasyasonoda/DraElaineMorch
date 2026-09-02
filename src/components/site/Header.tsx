@@ -86,6 +86,14 @@ export function Header() {
             </div>
           </div>
 
+          <Link
+            to="/blog"
+            className="hover:opacity-100 transition"
+            style={{ color: "#24222F" }}
+          >
+            Blog
+          </Link>
+
           <a href="/#sobre" className="hover:opacity-100 transition" style={{ color: "#24222F" }}>
             A consulta
           </a>
@@ -145,6 +153,14 @@ export function Header() {
                 </div>
               </div>
             ))}
+
+            <Link
+              to="/blog"
+              onClick={() => setOpen(false)}
+              style={{ color: "#24222F" }}
+            >
+              Blog
+            </Link>
 
             <a href="/#sobre" onClick={() => setOpen(false)} style={{ color: "#24222F" }}>
               A consulta

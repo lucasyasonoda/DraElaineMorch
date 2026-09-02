@@ -14,11 +14,16 @@ export function PageHero({
   breadcrumb?: ReactNode;
 }) {
   return (
-    <section className="relative">
-      <div
-        className="relative min-h-[52vh] flex items-end md:items-center bg-cover bg-center"
-        style={image ? { backgroundImage: `url(${image})` } : undefined}
-      >
+    <section className="relative overflow-hidden">
+      <div className="relative h-[768px] flex items-end md:items-center overflow-hidden">
+        {image && (
+          <img
+            src={image}
+            alt=""
+            className="absolute inset-0 h-full w-full max-w-none object-cover"
+            style={{ objectPosition: "18% center" }}
+          />
+        )}
         <div
           className="absolute inset-0"
           style={{

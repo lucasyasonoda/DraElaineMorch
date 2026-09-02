@@ -55,10 +55,10 @@ export type Category = {
 };
 
 import heroHomeImg from "@/assets/hero-home.jpg";
-import heroEsteticaImg from "@/assets/hero-estetica.jpg";
-import heroSaudeImg from "@/assets/hero-saude.jpg";
+import heroEsteticaImg from "@/assets/hero-estetica_extendida.jpg";
+import heroSaudeImg from "@/assets/hero-saude_extendida.jpg";
 import sobreDraElaineImg from "@/assets/sobre-dra-elaine.jpg";
-import laserCardImg from "@/assets/01-laser-intimo.jpg";
+import laserCardImg from "@/assets/01-laser-intimo.png";
 import ninfoplastiaCardImg from "@/assets/02-ninfoplastia.jpg";
 import radiofrequenciaCardImg from "@/assets/03-radiofrequencia-intima.jpg";
 import clareamentoCardImg from "@/assets/04-clareamento-intimo.jpg";

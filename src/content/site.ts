@@ -35,6 +35,8 @@ export type Treatment = {
   steps?: { title: string; body: string }[];
   approach?: string[];
   results?: string[];
+  videoUrl?: string;
+  videoDescription?: string;
   faq: FaqItem[];
 };
 
@@ -188,6 +190,8 @@ export const TREATMENTS: Treatment[] = [
       "Melhora discreta da incontinência urinária leve",
       "Mais conforto e confiança no dia a dia",
     ],
+    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoDescription: "Conheça como o laser rejuvenesce e hidrata os tecidos íntimos, devolvendo conforto e bem-estar sem cirurgia.",
     faq: [
       {
         q: "O laser íntimo dói?",
@@ -247,6 +251,8 @@ export const TREATMENTS: Treatment[] = [
       "Mais confiança e bem-estar na vida íntima",
       "Resultado natural e harmônico",
     ],
+    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoDescription: "Entenda o procedimento de ninfoplastia, como é realizado com segurança e os resultados que você pode esperar.",
     faq: [
       {
         q: "A ninfoplastia deixa cicatriz?",
@@ -301,6 +307,8 @@ export const TREATMENTS: Treatment[] = [
       "Rejuvenescimento da aparência da região externa",
       "Resultados progressivos e duradouros",
     ],
+    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoDescription: "Descubra como a radiofrequência rejuvenesce os tecidos íntimos de forma segura, sem cirurgia e sem tempo de parada.",
     faq: [
       {
         q: "A radiofrequência íntima dói?",
@@ -349,6 +357,8 @@ export const TREATMENTS: Treatment[] = [
       "Resultado natural, sem tons artificiais",
       "Mais confiança e bem-estar com o próprio corpo",
     ],
+    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoDescription: "Saiba como o procedimento de clareamento íntimo funciona, é seguro e traz resultados naturais para sua autoestima.",
     faq: [
       {
         q: "O clareamento íntimo é seguro para todos os tipos de pele?",
@@ -401,6 +411,8 @@ export const TREATMENTS: Treatment[] = [
       "Mais conforto em atividades físicas e no dia a dia",
       "Resultados que duram de 12 a 18 meses",
     ],
+    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoDescription: "Conheça o procedimento de preenchimento íntimo: como é realizado, quanto tempo dura e como recupera volume e conforto.",
     faq: [
       {
         q: "O preenchimento íntimo dói?",
@@ -476,6 +488,8 @@ export const TREATMENTS: Treatment[] = [
       "Orientações de estilo de vida: alimentação, exercício, suplementação",
       "Acompanhamento contínuo e ajuste do tratamento conforme evolução",
     ],
+    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoDescription: "Entenda como o tratamento da menopausa funciona e como a reposição hormonal pode devolver seu bem-estar e qualidade de vida.",
     faq: [
       {
         q: "Menopausa precoce é diferente?",
@@ -538,6 +552,8 @@ export const TREATMENTS: Treatment[] = [
       "Proteção da saúde óssea, cardiovascular e metabólica a longo prazo",
       "Sensação de bem-estar geral e qualidade de vida",
     ],
+    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoDescription: "Descubra como a reposição hormonal tradicional funciona, seus benefícios e como é personalizada para cada paciente.",
     faq: [
       {
         q: "A reposição hormonal tem riscos?",
@@ -595,6 +611,8 @@ export const TREATMENTS: Treatment[] = [
       "Melhora progressiva dos sintomas em semanas",
       "Acompanhamento contínuo e ajuste fino do protocolo",
     ],
+    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoDescription: "Saiba como os hormônios bioidenticos funcionam, por que são uma opção natural e como são personalizados para você.",
     faq: [
       {
         q: "Hormônios bioidenticos são mais seguros que os convencionais?",
@@ -653,6 +671,8 @@ export const TREATMENTS: Treatment[] = [
       "Praticidade: sem doses diárias",
       "Proteção de longo prazo para ossos e sistema cardiovascular",
     ],
+    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoDescription: "Conheça os implantes hormonais (pellets): como funcionam, quanto tempo duram e os benefícios desta opção inovadora de reposição.",
     faq: [
       {
         q: "O implante dói?",
@@ -706,6 +726,8 @@ export const TREATMENTS: Treatment[] = [
       "Retorno às atividades físicas sem preocupação",
       "Melhora da qualidade de vida e autoestima",
     ],
+    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoDescription: "Entenda como laser e radiofrequência tratam a incontinência urinária de forma eficaz, segura e sem cirurgia.",
     faq: [
       {
         q: "Incontinência urinária tem cura?",

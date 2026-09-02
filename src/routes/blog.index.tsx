@@ -194,7 +194,7 @@ function RouteComponent() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 flex flex-col h-40">
+                  <div className="p-6 flex flex-col min-h-40">
                     <div className="flex items-center gap-2 mb-3">
                       <Badge variant="secondary" className="text-xs">
                         {post.categoryLabel}

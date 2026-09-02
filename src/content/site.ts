@@ -84,6 +84,8 @@ import reposicaoHormonalCardImg from "@/assets/07-reposicao-hormonal.jpeg";
 import hormoniosBioidenticosCardImg from "@/assets/08-hormonios-bioidenticos.jpg";
 import implantesHormonaisCardImg from "@/assets/09-implantes-hormonais.jpeg";
 import incontinenciaUrinariaCardImg from "@/assets/10-incontinencia-urinaria.jpeg";
+import blogMenopausaImg from "@/assets/06-menopausa.jpeg";
+import blogLaserImg from "@/assets/01-laser-intimo.png";
 
 export const CATEGORIES: Category[] = [
   {
@@ -791,7 +793,7 @@ export const BLOG_POSTS: BlogPost[] = [
     categoryLabel: "Educacional",
     author: "Dra. Elaine Morch",
     date: "2026-08-28",
-    image: "https://via.placeholder.com/600x400?text=Menopausa",
+    image: blogMenopausaImg,
     metaTitle: "Menopausa e Qualidade de Vida | Dra. Elaine Morch",
     metaDescription: "Saiba como lidar com os sintomas da menopausa e recuperar sua qualidade de vida com tratamentos especializados.",
   },
@@ -819,7 +821,7 @@ export const BLOG_POSTS: BlogPost[] = [
     categoryLabel: "Educacional",
     author: "Dra. Elaine Morch",
     date: "2026-08-22",
-    image: "https://via.placeholder.com/600x400?text=Laser+Intimo",
+    image: blogLaserImg,
     metaTitle: "Laser Íntimo: 5 dúvidas frequentes | Dra. Elaine Morch",
     metaDescription: "Saiba mais sobre o procedimento de laser íntimo e tire suas dúvidas com a Dra. Elaine Morch.",
   },
@@ -844,7 +846,7 @@ export const BLOG_POSTS: BlogPost[] = [
     categoryLabel: "Bem-estar",
     author: "Dra. Elaine Morch",
     date: "2026-08-15",
-    image: "https://via.placeholder.com/600x400?text=Bem-estar",
+    image: blogMenopausaImg,
     metaTitle: "Dicas de Bem-estar na Menopausa | Dra. Elaine Morch",
     metaDescription: "Descubra dicas práticas para melhorar seu bem-estar durante a menopausa com mudanças simples no dia a dia.",
   },

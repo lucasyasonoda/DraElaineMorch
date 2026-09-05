@@ -15,13 +15,13 @@ export function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden">
-      <div className="relative h-[768px] flex items-end md:items-center overflow-hidden">
+      <div className="relative h-[440px] md:h-[520px] flex items-end md:items-center overflow-hidden">
         {image && (
           <img
             src={image}
             alt=""
             className="absolute inset-0 h-full w-full max-w-none object-cover"
-            style={{ objectPosition: "18% center" }}
+            style={{ objectPosition: "18% 22%" }}
           />
         )}
         <div

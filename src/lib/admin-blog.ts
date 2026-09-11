@@ -3,20 +3,19 @@ import type { BlogPost } from "@/content/site";
 export const ADMIN_USERNAME = "morchelaineadmin";
 export const ADMIN_PASSWORD = "morch2026@";
 const POSTS_KEY = "elaine_admin_blog_posts";
-const SESSION_KEY = "elaine_admin_session";
 
+// A autenticação fica apenas no estado da página. Assim, recarregar o site,
+// fechar a aba ou outra pessoa acessar o painel exige um novo login.
 export function isAdminLoggedIn(): boolean {
-  return typeof window !== "undefined" && sessionStorage.getItem(SESSION_KEY) === "1";
+  return false;
 }
 
 export function adminLogin(username: string, password: string): boolean {
-  if (username !== ADMIN_USERNAME || password !== ADMIN_PASSWORD) return false;
-  sessionStorage.setItem(SESSION_KEY, "1");
-  return true;
+  return username === ADMIN_USERNAME && password === ADMIN_PASSWORD;
 }
 
 export function adminLogout(): void {
-  sessionStorage.removeItem(SESSION_KEY);
+  // O estado autenticado é controlado pelo componente do painel.
 }
 
 export function getAdminPosts(): BlogPost[] {

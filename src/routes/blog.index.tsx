@@ -1,13 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { getAllBlogPosts, getBlogPostsByCategory } from "@/content/site";
+import { getAllBlogPosts, getBlogPostsByCategory, type BlogPost } from "@/content/site";
 import { PageHero } from "@/components/site/PageHero";
 import { CTASection } from "@/components/site/CTASection";
 import { BackToTop } from "@/components/site/BackToTop";
 import { useReveal } from "@/hooks/use-reveal";
 import { ArrowRight } from "lucide-react";
 import blogHeroImg from "@/assets/hero-home.jpg";
+import { getAdminPosts } from "@/lib/admin-blog";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -50,14 +51,16 @@ function formatDate(date: string) {
 
 function RouteComponent() {
   const [activeCategory, setActiveCategory] = useState<Category>("todos");
+  const [adminPosts, setAdminPosts] = useState<BlogPost[]>([]);
+  useEffect(() => setAdminPosts(getAdminPosts()), []);
   const featuredRef = useReveal<HTMLDivElement>();
   const gridRef = useReveal<HTMLDivElement>();
 
-  const allPosts = getAllBlogPosts();
+  const allPosts = [...adminPosts, ...getAllBlogPosts()];
   const filteredPosts =
     activeCategory === "todos"
       ? allPosts
-      : getBlogPostsByCategory(activeCategory as "educacional" | "novidades" | "bem-estar");
+      : allPosts.filter((post) => post.category === activeCategory);
 
   const featuredPost = allPosts.length > 0 ? allPosts[0] : null;
 
@@ -222,3 +225,6 @@ function RouteComponent() {
     </div>
   );
 }
+
+
+

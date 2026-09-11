@@ -254,7 +254,7 @@ export const TREATMENTS: Treatment[] = [
       "Mais confiança e bem-estar na vida íntima",
       "Resultado natural e harmônico",
     ],
-    videoUrl: "https://www.youtube.com/shorts/Jewij_2nbCs",
+    videoUrl: "https://www.youtube.com/shorts/j8M2RVRy1BI",
     videoDescription:
       "A ninfoplastia é um procedimento que pode ajudar a reduzir o excesso de tecido, proporcionando mais conforto, funcionalidade e bem-estar no dia a dia.",
     faq: [
@@ -737,7 +737,7 @@ export const TREATMENTS: Treatment[] = [
       "Retorno às atividades físicas sem preocupação",
       "Melhora da qualidade de vida e autoestima",
     ],
-    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoUrl: "https://www.youtube.com/shorts/SPdVvCLV7RE",
     videoDescription:
       "Entenda como laser e radiofrequência tratam a incontinência urinária de forma eficaz, segura e sem cirurgia.",
     faq: [
@@ -870,3 +870,4 @@ export const HOME_IMAGES = {
   hero: heroHomeImg,
   sobre: sobreDraElaineImg,
 };
+

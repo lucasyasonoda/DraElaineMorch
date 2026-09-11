@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { getBlogPost, getAllBlogPosts } from "@/content/site";
+import { useEffect, useState } from "react";
+import { getBlogPost, getAllBlogPosts, type BlogPost } from "@/content/site";
+import { getAdminPosts } from "@/lib/admin-blog";
 import { CTASection } from "@/components/site/CTASection";
 import { BackToTop } from "@/components/site/BackToTop";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -162,3 +164,7 @@ function RouteComponent() {
     </div>
   );
 }
+
+
+
+

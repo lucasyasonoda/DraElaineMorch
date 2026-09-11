@@ -33,8 +33,12 @@ function NotFoundComponent() {
 
 function RouteComponent() {
   const { slug } = Route.useParams();
-  const post = getBlogPost(slug);
-  const allPosts = getAllBlogPosts();
+  const [adminPosts, setAdminPosts] = useState<BlogPost[]>([]);
+
+  useEffect(() => setAdminPosts(getAdminPosts()), []);
+
+  const post = adminPosts.find((item) => item.slug === slug) ?? getBlogPost(slug);
+  const allPosts = [...adminPosts, ...getAllBlogPosts()];
 
   if (!post) {
     return <NotFoundComponent />;

@@ -114,10 +114,13 @@ function Home() {
       </section>
 
       {/* STATS */}
-      <section className="container-edit -mt-16 relative z-10 pt-8 md:pt-12" ref={stats.ref}>
+      <section
+        className="container-edit -mt-16 relative z-10 pt-8 md:pt-12 pointer-events-none"
+        ref={stats.ref}
+      >
         <div className={`${stats.className} max-w-[74%] mx-auto`}>
           <ul
-            className="grid grid-cols-3 gap-2 md:gap-6 py-4 md:py-5 px-4 md:px-8"
+            className="grid grid-cols-3 gap-2 md:gap-6 py-4 md:py-5 px-4 md:px-8 pointer-events-auto"
             style={{ background: "var(--cream)" }}
           >
             {[

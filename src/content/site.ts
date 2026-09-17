@@ -35,6 +35,8 @@ export type Treatment = {
   steps?: { title: string; body: string }[];
   approach?: string[];
   results?: string[];
+  videoUrl?: string;
+  videoDescription?: string;
   faq: FaqItem[];
 };
 
@@ -54,20 +56,36 @@ export type Category = {
   faq: FaqItem[];
 };
 
+export type BlogPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  category: "educacional" | "novidades" | "bem-estar";
+  categoryLabel: string;
+  author: string;
+  date: string; // YYYY-MM-DD
+  image: string;
+  metaTitle: string;
+  metaDescription: string;
+};
+
 import heroHomeImg from "@/assets/hero-home.jpg";
-import heroEsteticaImg from "@/assets/hero-estetica.jpg";
-import heroSaudeImg from "@/assets/hero-saude.jpg";
+import heroEsteticaImg from "@/assets/hero-estetica_extendida.jpg";
+import heroSaudeImg from "@/assets/hero-saude_extendida.jpg";
 import sobreDraElaineImg from "@/assets/sobre-dra-elaine.jpg";
-import laserCardImg from "@/assets/01-laser-intimo.jpg";
-import ninfoplastiaCardImg from "@/assets/02-ninfoplastia.jpg";
-import radiofrequenciaCardImg from "@/assets/03-radiofrequencia-intima.jpg";
-import clareamentoCardImg from "@/assets/04-clareamento-intimo.jpg";
+import laserCardImg from "@/assets/01-laser-intimo.png";
+import ninfoplastiaCardImg from "@/assets/ninfoplastia-nova.jpeg";
+import radiofrequenciaCardImg from "@/assets/radiofrequencia-intima-nova.jpeg";
+import clareamentoCardImg from "@/assets/clareamento-intimo-nova.jpeg";
 import preenchimentoCardImg from "@/assets/05-preenchimento-intimo.jpeg";
 import menopausaCardImg from "@/assets/06-menopausa.jpeg";
 import reposicaoHormonalCardImg from "@/assets/07-reposicao-hormonal.jpeg";
 import hormoniosBioidenticosCardImg from "@/assets/08-hormonios-bioidenticos.jpg";
-import implantesHormonaisCardImg from "@/assets/09-implantes-hormonais.jpeg";
+import implantesHormonaisCardImg from "@/assets/implantes-hormonais-nova.jpeg";
 import incontinenciaUrinariaCardImg from "@/assets/10-incontinencia-urinaria.jpeg";
+import blogMenopausaImg from "@/assets/06-menopausa.jpeg";
+import blogLaserImg from "@/assets/01-laser-intimo.png";
 
 export const CATEGORIES: Category[] = [
   {
@@ -174,6 +192,9 @@ export const TREATMENTS: Treatment[] = [
       "Melhora discreta da incontinência urinária leve",
       "Mais conforto e confiança no dia a dia",
     ],
+    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoDescription:
+      "Conheça como o laser rejuvenesce e hidrata os tecidos íntimos, devolvendo conforto e bem-estar sem cirurgia.",
     faq: [
       {
         q: "O laser íntimo dói?",
@@ -233,6 +254,9 @@ export const TREATMENTS: Treatment[] = [
       "Mais confiança e bem-estar na vida íntima",
       "Resultado natural e harmônico",
     ],
+    videoUrl: "https://www.youtube.com/shorts/j8M2RVRy1BI",
+    videoDescription:
+      "A ninfoplastia é um procedimento que pode ajudar a reduzir o excesso de tecido, proporcionando mais conforto, funcionalidade e bem-estar no dia a dia.",
     faq: [
       {
         q: "A ninfoplastia deixa cicatriz?",
@@ -287,6 +311,9 @@ export const TREATMENTS: Treatment[] = [
       "Rejuvenescimento da aparência da região externa",
       "Resultados progressivos e duradouros",
     ],
+    videoUrl: "https://www.youtube.com/shorts/sd9H1OufD68",
+    videoDescription:
+      "A radiofrequência não ablativa atua estimulando colágeno e regeneração dos tecidos íntimos — indicada para mulheres com ressecamento vaginal, escapes urinários e flacidez íntima que acreditam ser apenas “normal da idade”.",
     faq: [
       {
         q: "A radiofrequência íntima dói?",
@@ -335,6 +362,9 @@ export const TREATMENTS: Treatment[] = [
       "Resultado natural, sem tons artificiais",
       "Mais confiança e bem-estar com o próprio corpo",
     ],
+    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoDescription:
+      "Saiba como o procedimento de clareamento íntimo funciona, é seguro e traz resultados naturais para sua autoestima.",
     faq: [
       {
         q: "O clareamento íntimo é seguro para todos os tipos de pele?",
@@ -387,6 +417,9 @@ export const TREATMENTS: Treatment[] = [
       "Mais conforto em atividades físicas e no dia a dia",
       "Resultados que duram de 12 a 18 meses",
     ],
+    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoDescription:
+      "Conheça o procedimento de preenchimento íntimo: como é realizado, quanto tempo dura e como recupera volume e conforto.",
     faq: [
       {
         q: "O preenchimento íntimo dói?",
@@ -462,6 +495,9 @@ export const TREATMENTS: Treatment[] = [
       "Orientações de estilo de vida: alimentação, exercício, suplementação",
       "Acompanhamento contínuo e ajuste do tratamento conforme evolução",
     ],
+    videoUrl: "https://www.youtube.com/shorts/cFzAxkUoJbs",
+    videoDescription:
+      "Entenda os sintomas da menopausa e da perimenopausa — e saiba que existem caminhos para aliviar cada um deles com o acompanhamento adequado.",
     faq: [
       {
         q: "Menopausa precoce é diferente?",
@@ -524,6 +560,9 @@ export const TREATMENTS: Treatment[] = [
       "Proteção da saúde óssea, cardiovascular e metabólica a longo prazo",
       "Sensação de bem-estar geral e qualidade de vida",
     ],
+    videoUrl: "https://www.youtube.com/shorts/RyF_Brc_y5U",
+    videoDescription:
+      "Quem retirou o útero precisa fazer reposição hormonal? A indicação depende de idade, sintomas, motivo da cirurgia, funcionamento dos ovários, histórico de saúde e possíveis contraindicações.",
     faq: [
       {
         q: "A reposição hormonal tem riscos?",
@@ -581,6 +620,9 @@ export const TREATMENTS: Treatment[] = [
       "Melhora progressiva dos sintomas em semanas",
       "Acompanhamento contínuo e ajuste fino do protocolo",
     ],
+    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoDescription:
+      "Saiba como os hormônios bioidenticos funcionam, por que são uma opção natural e como são personalizados para você.",
     faq: [
       {
         q: "Hormônios bioidenticos são mais seguros que os convencionais?",
@@ -639,6 +681,9 @@ export const TREATMENTS: Treatment[] = [
       "Praticidade: sem doses diárias",
       "Proteção de longo prazo para ossos e sistema cardiovascular",
     ],
+    videoUrl: "https://www.youtube.com/shorts/LmyqNjPR66Y",
+    videoDescription:
+      "Conheça os implantes hormonais (pellets): como funcionam, quanto tempo duram e os benefícios desta opção inovadora de reposição.",
     faq: [
       {
         q: "O implante dói?",
@@ -692,6 +737,9 @@ export const TREATMENTS: Treatment[] = [
       "Retorno às atividades físicas sem preocupação",
       "Melhora da qualidade de vida e autoestima",
     ],
+    videoUrl: "https://www.youtube.com/shorts/SPdVvCLV7RE",
+    videoDescription:
+      "Entenda como laser e radiofrequência tratam a incontinência urinária de forma eficaz, segura e sem cirurgia.",
     faq: [
       {
         q: "Incontinência urinária tem cura?",
@@ -723,7 +771,103 @@ export function getTreatment(categorySlug: string, slug: string) {
   return TREATMENTS.find((t) => t.categorySlug === categorySlug && t.slug === slug);
 }
 
+export function getBlogPost(slug: string) {
+  return BLOG_POSTS.find((p) => p.slug === slug);
+}
+
+export function getBlogPostsByCategory(category: string) {
+  return BLOG_POSTS.filter((p) => p.category === category).sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
+}
+
+export function getAllBlogPosts() {
+  return BLOG_POSTS.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "menopausa-e-qualidade-de-vida",
+    title: "Menopausa e Qualidade de Vida: entenda essa fase",
+    excerpt:
+      "Descubra como a reposição hormonal pode transformar sua experiência durante a menopausa e devolver o bem-estar à sua rotina.",
+    content: `<p>A menopausa é uma fase natural da vida, mas isso não significa que você precisa lidar com desconfortos desnecessários. Neste artigo, exploramos como a medicina especializada pode oferecer soluções personalizadas.</p>
+
+<h3>Sintomas comuns e como lidar com eles</h3>
+<p>Fogachos, ressecamento vaginal, mudanças de humor e dificuldade de sono são frequentes. Mas existem opções eficazes de tratamento — desde modificações no estilo de vida até reposição hormonal.</p>
+
+<h3>Quando procurar ajuda médica</h3>
+<p>Se os sintomas estão interferindo na sua qualidade de vida, é hora de buscar um acompanhamento especializado. A Dra. Elaine Morch oferece avaliação individualizada para encontrar a melhor solução para você.</p>`,
+    category: "educacional",
+    categoryLabel: "Educacional",
+    author: "Dra. Elaine Morch",
+    date: "2026-08-28",
+    image: blogMenopausaImg,
+    metaTitle: "Menopausa e Qualidade de Vida | Dra. Elaine Morch",
+    metaDescription:
+      "Saiba como lidar com os sintomas da menopausa e recuperar sua qualidade de vida com tratamentos especializados.",
+  },
+  {
+    slug: "laser-intimo-tira-duvidas",
+    title: "Laser Íntimo: 5 dúvidas mais frequentes",
+    excerpt:
+      "Você tem dúvidas sobre o procedimento de laser íntimo? Respondemos as perguntas mais comuns de nossas pacientes.",
+    content: `<p>O laser íntimo é um dos procedimentos não cirúrgicos mais procurados em nosso consultório. Vamos esclarecer as dúvidas mais frequentes:</p>
+
+<h3>1. O procedimento dói?</h3>
+<p>Não. O laser gera apenas uma sensação de calor leve. A maioria das pacientes relata conforto durante toda a sessão.</p>
+
+<h3>2. Qual é o tempo de recuperação?</h3>
+<p>Nenhum. Você retorna às atividades normais imediatamente após o procedimento.</p>
+
+<h3>3. Quantas sessões são necessárias?</h3>
+<p>O protocolo padrão é de 3 sessões com intervalo de 30 dias, mas a Dra. Elaine avaliará seu caso especificamente.</p>
+
+<h3>4. Quando começo a ver resultados?</h3>
+<p>Muitas pacientes noticiam melhoras já após a primeira sessão, com progressão ao longo do tratamento.</p>
+
+<h3>5. É seguro?</h3>
+<p>Sim. É uma tecnologia comprovada e segura quando realizada por profissional especializado.</p>`,
+    category: "educacional",
+    categoryLabel: "Educacional",
+    author: "Dra. Elaine Morch",
+    date: "2026-08-22",
+    image: blogLaserImg,
+    metaTitle: "Laser Íntimo: 5 dúvidas frequentes | Dra. Elaine Morch",
+    metaDescription:
+      "Saiba mais sobre o procedimento de laser íntimo e tire suas dúvidas com a Dra. Elaine Morch.",
+  },
+  {
+    slug: "dicas-de-bem-estar-na-menopausa",
+    title: "Dicas de Bem-estar: rotina na menopausa",
+    excerpt:
+      "Pequenas mudanças diárias podem fazer uma grande diferença na sua saúde e bem-estar durante a menopausa.",
+    content: `<p>Além dos tratamentos médicos, existem mudanças simples que você pode fazer no seu dia a dia para melhorar como se sente durante a menopausa:</p>
+
+<h3>1. Movimento é saúde</h3>
+<p>Atividades como yoga, caminhada e pilates ajudam a manter o bem-estar físico e mental. 30 minutos de movimento diário já fazem diferença.</p>
+
+<h3>2. Hidratação e alimentação</h3>
+<p>Aumentar a ingestão de água e alimentos ricos em fitoestrógenos (como soja e linhaça) pode aliviar sintomas.</p>
+
+<h3>3. Sono de qualidade</h3>
+<p>Durma em ambiente fresco, evite telas antes de dormir e considere técnicas de relaxamento como meditação.</p>
+
+<h3>4. Cuidado emocional</h3>
+<p>Essa fase traz mudanças — conversar com pessoas de confiança ou buscar terapia pode ser muito valioso.</p>`,
+    category: "bem-estar",
+    categoryLabel: "Bem-estar",
+    author: "Dra. Elaine Morch",
+    date: "2026-08-15",
+    image: blogMenopausaImg,
+    metaTitle: "Dicas de Bem-estar na Menopausa | Dra. Elaine Morch",
+    metaDescription:
+      "Descubra dicas práticas para melhorar seu bem-estar durante a menopausa com mudanças simples no dia a dia.",
+  },
+];
+
 export const HOME_IMAGES = {
   hero: heroHomeImg,
   sobre: sobreDraElaineImg,
 };
+

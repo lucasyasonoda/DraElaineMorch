@@ -86,8 +86,8 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-weight: 300;
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 1.0625rem;
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
   }
   h1,
@@ -174,14 +174,14 @@
   }
 
   .lead-copy {
-    font-size: 1.0625rem;
-    line-height: 1.75;
+    font-size: 1.125rem;
+    line-height: 1.8;
     font-weight: 300;
   }
 
   .body-copy {
-    font-size: 1rem;
-    line-height: 1.75;
+    font-size: 1.0625rem;
+    line-height: 1.8;
     font-weight: 300;
   }
 
@@ -244,6 +244,17 @@
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@layer utilities {
+  /* Textos auxiliares ficam maiores para facilitar a leitura. */
+  .text-sm {
+    font-size: 0.9375rem;
+  }
+
+  .text-xs {
+    font-size: 0.8125rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

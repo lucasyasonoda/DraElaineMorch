@@ -10,7 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as TratamentosRouteImport } from './routes/tratamentos'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as TratamentosIndexRouteImport } from './routes/tratamentos.index'
 import { Route as TratamentosCategoriaRouteImport } from './routes/tratamentos.$categoria'
 import { Route as TratamentosCategoriaIndexRouteImport } from './routes/tratamentos.$categoria.index'
@@ -21,9 +24,24 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TratamentosRoute = TratamentosRouteImport.update({
   id: '/tratamentos',
   path: '/tratamentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TratamentosIndexRoute = TratamentosIndexRouteImport.update({
@@ -51,14 +69,20 @@ const TratamentosCategoriaSlugRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/tratamentos': typeof TratamentosRouteWithChildren
+  '/blog/$slug': typeof BlogSlugRoute
   '/tratamentos/$categoria': typeof TratamentosCategoriaRouteWithChildren
+  '/blog/': typeof BlogIndexRoute
   '/tratamentos/': typeof TratamentosIndexRoute
   '/tratamentos/$categoria/$slug': typeof TratamentosCategoriaSlugRoute
   '/tratamentos/$categoria/': typeof TratamentosCategoriaIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog': typeof BlogIndexRoute
   '/tratamentos': typeof TratamentosIndexRoute
   '/tratamentos/$categoria/$slug': typeof TratamentosCategoriaSlugRoute
   '/tratamentos/$categoria': typeof TratamentosCategoriaIndexRoute
@@ -66,8 +90,11 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/tratamentos': typeof TratamentosRouteWithChildren
+  '/blog/$slug': typeof BlogSlugRoute
   '/tratamentos/$categoria': typeof TratamentosCategoriaRouteWithChildren
+  '/blog/': typeof BlogIndexRoute
   '/tratamentos/': typeof TratamentosIndexRoute
   '/tratamentos/$categoria/$slug': typeof TratamentosCategoriaSlugRoute
   '/tratamentos/$categoria/': typeof TratamentosCategoriaIndexRoute
@@ -76,22 +103,31 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
     | '/tratamentos'
+    | '/blog/$slug'
     | '/tratamentos/$categoria'
+    | '/blog/'
     | '/tratamentos/'
     | '/tratamentos/$categoria/$slug'
     | '/tratamentos/$categoria/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/admin'
+    | '/blog/$slug'
+    | '/blog'
     | '/tratamentos'
     | '/tratamentos/$categoria/$slug'
     | '/tratamentos/$categoria'
   id:
     | '__root__'
     | '/'
+    | '/admin'
     | '/tratamentos'
+    | '/blog/$slug'
     | '/tratamentos/$categoria'
+    | '/blog/'
     | '/tratamentos/'
     | '/tratamentos/$categoria/$slug'
     | '/tratamentos/$categoria/'
@@ -99,7 +135,10 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
   TratamentosRoute: typeof TratamentosRouteWithChildren
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -111,11 +150,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tratamentos': {
       id: '/tratamentos'
       path: '/tratamentos'
       fullPath: '/tratamentos'
       preLoaderRoute: typeof TratamentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tratamentos/': {
@@ -178,7 +238,10 @@ const TratamentosRouteWithChildren = TratamentosRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
   TratamentosRoute: TratamentosRouteWithChildren,
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

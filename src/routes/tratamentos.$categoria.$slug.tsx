@@ -4,6 +4,8 @@ import { getCategory, getTreatment, getTreatmentsByCategory } from "@/content/si
 import { PageHero } from "@/components/site/PageHero";
 import { FaqSection } from "@/components/site/FaqSection";
 import { CTASection } from "@/components/site/CTASection";
+import { ShortVideoPlayer } from "@/components/site/ShortVideoPlayer";
+import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/tratamentos/$categoria/$slug")({
   loader: ({ params }) => {
@@ -43,6 +45,7 @@ export const Route = createFileRoute("/tratamentos/$categoria/$slug")({
 function TreatmentPage() {
   const { category, treatment } = Route.useLoaderData();
   const related = getTreatmentsByCategory(category.slug).filter((t) => t.slug !== treatment.slug);
+  const videoHead = useReveal<HTMLDivElement>();
 
   return (
     <>
@@ -184,6 +187,26 @@ function TreatmentPage() {
               </li>
             ))}
           </ul>
+        </section>
+      )}
+
+      {treatment.videoUrl && (
+        <section className="border-y border-border bg-secondary/25" id="video">
+          <div className="container-edit py-20 md:py-24 grid md:grid-cols-[1fr_auto] gap-10 items-center">
+            <div ref={videoHead.ref} className={videoHead.className}>
+              <div className="eyebrow hairline">Conteúdo em vídeo</div>
+              <h2 className="section-title mt-6">
+                Informação clara, em <span className="gold-italic">poucos minutos.</span>
+              </h2>
+              <p className="editorial-lead italic text-muted-foreground mt-5">
+                {treatment.videoDescription || `Um espaço para conteúdos curtos da Dra. Elaine sobre ${treatment.navLabel.toLowerCase()}.`}
+              </p>
+              <span className="text-xs uppercase tracking-widest text-muted-foreground mt-4 inline-block">
+                Clique no play para assistir
+              </span>
+            </div>
+            <ShortVideoPlayer url={treatment.videoUrl} title={treatment.navLabel} />
+          </div>
         </section>
       )}
 

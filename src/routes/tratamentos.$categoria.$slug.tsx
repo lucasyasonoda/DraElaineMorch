@@ -54,6 +54,11 @@ function TreatmentPage() {
         title={treatment.title}
         lead={treatment.lead}
         image={treatment.image}
+        imageFit={
+          treatment.slug === "preenchimento-intimo" || treatment.slug === "incontinencia-urinaria"
+            ? "contain"
+            : "fill"
+        }
         breadcrumb={
           <>
             <Link to="/" className="hover:text-foreground">

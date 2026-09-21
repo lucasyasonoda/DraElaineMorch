@@ -78,12 +78,12 @@ import laserCardImg from "@/assets/01-laser-intimo.png";
 import ninfoplastiaCardImg from "@/assets/ninfoplastia-nova.jpeg";
 import radiofrequenciaCardImg from "@/assets/radiofrequencia-intima-nova.jpeg";
 import clareamentoCardImg from "@/assets/clareamento-intimo-nova.jpeg";
-import preenchimentoCardImg from "@/assets/05-preenchimento-intimo.jpeg";
+import preenchimentoCardImg from "@/assets/preenchimento-intimo-reposicao.jpeg";
 import menopausaCardImg from "@/assets/06-menopausa.jpeg";
-import reposicaoHormonalCardImg from "@/assets/07-reposicao-hormonal.jpeg";
+import reposicaoHormonalCardImg from "@/assets/reposicao-hormonal-reposicao.jpeg";
 import hormoniosBioidenticosCardImg from "@/assets/08-hormonios-bioidenticos.jpg";
-import implantesHormonaisCardImg from "@/assets/implantes-hormonais-nova.jpeg";
-import incontinenciaUrinariaCardImg from "@/assets/10-incontinencia-urinaria.jpeg";
+import implantesHormonaisCardImg from "@/assets/implantes-hormonais-reposicao.jpeg";
+import incontinenciaUrinariaCardImg from "@/assets/incontinencia-urinaria-reposicao.jpeg";
 import blogMenopausaImg from "@/assets/06-menopausa.jpeg";
 import blogLaserImg from "@/assets/01-laser-intimo.png";
 

@@ -5,33 +5,42 @@ export function PageHero({
   title,
   lead,
   image,
+  imageFit = "cover",
   breadcrumb,
 }: {
   overline: string;
   title: ReactNode;
   lead?: string;
   image?: string;
+  imageFit?: "cover" | "fill";
   breadcrumb?: ReactNode;
 }) {
+  const showFullImage = imageFit === "fill";
+
   return (
     <section className="relative overflow-hidden">
-      <div className="relative h-[440px] md:h-[520px] flex items-end md:items-center overflow-hidden">
+      <div className="relative h-[440px] md:h-[520px] overflow-hidden bg-[var(--ink)]">
         {image && (
           <img
             src={image}
             alt=""
-            className="absolute inset-0 h-full w-full max-w-none object-cover"
-            style={{ objectPosition: "18% 22%" }}
+            className="absolute inset-0 h-full w-full"
+            style={
+              showFullImage
+                ? { objectFit: "fill" }
+                : { objectFit: "cover", objectPosition: "18% 22%" }
+            }
           />
         )}
         <div
           className="absolute inset-0"
           style={{
-            background:
-              "linear-gradient(90deg, rgba(36,34,47,.2) 0%, rgba(36,34,47,.55) 45%, rgba(36,34,47,.94) 100%)",
+            background: showFullImage
+              ? "linear-gradient(90deg, rgba(36,34,47,.08) 0%, rgba(36,34,47,.35) 42%, rgba(36,34,47,.94) 76%, rgba(36,34,47,.98) 100%)"
+              : "linear-gradient(90deg, rgba(36,34,47,.2) 0%, rgba(36,34,47,.55) 45%, rgba(36,34,47,.94) 100%)",
           }}
         />
-        <div className="container-edit relative z-10 py-16 md:py-20">
+        <div className="container-edit relative z-10 flex h-full items-center py-16 md:py-20">
           <div className="max-w-2xl ml-auto text-right md:text-right">
             <div className="eyebrow" style={{ color: "var(--cream)" }}>
               {overline}

@@ -37,6 +37,11 @@ export function Footer() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>{SITE.city}</li>
             <li>
+              <Link to="/sobre" className="hover:text-foreground">
+                Sobre a Dra. Elaine
+              </Link>
+            </li>
+            <li>
               <a
                 href={`https://wa.me/${SITE.whatsapp}`}
                 target="_blank"

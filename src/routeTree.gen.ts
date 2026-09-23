@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminRouteImport } from './routes/admin'
+import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as TratamentosRouteImport } from './routes/tratamentos'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -27,6 +28,11 @@ const IndexRoute = IndexRouteImport.update({
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
   path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TratamentosRoute = TratamentosRouteImport.update({
@@ -70,6 +76,7 @@ const TratamentosCategoriaSlugRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
+  '/sobre': typeof SobreRoute
   '/tratamentos': typeof TratamentosRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/tratamentos/$categoria': typeof TratamentosCategoriaRouteWithChildren
@@ -81,6 +88,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
+  '/sobre': typeof SobreRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
   '/tratamentos': typeof TratamentosIndexRoute
@@ -91,6 +99,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
+  '/sobre': typeof SobreRoute
   '/tratamentos': typeof TratamentosRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/tratamentos/$categoria': typeof TratamentosCategoriaRouteWithChildren
@@ -104,6 +113,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/admin'
+    | '/sobre'
     | '/tratamentos'
     | '/blog/$slug'
     | '/tratamentos/$categoria'
@@ -115,6 +125,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/admin'
+    | '/sobre'
     | '/blog/$slug'
     | '/blog'
     | '/tratamentos'
@@ -124,6 +135,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/admin'
+    | '/sobre'
     | '/tratamentos'
     | '/blog/$slug'
     | '/tratamentos/$categoria'
@@ -136,6 +148,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
+  SobreRoute: typeof SobreRoute
   TratamentosRoute: typeof TratamentosRouteWithChildren
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -155,6 +168,13 @@ declare module '@tanstack/react-router' {
       path: '/admin'
       fullPath: '/admin'
       preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tratamentos': {
@@ -239,6 +259,7 @@ const TratamentosRouteWithChildren = TratamentosRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
+  SobreRoute: SobreRoute,
   TratamentosRoute: TratamentosRouteWithChildren,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
